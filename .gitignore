@@ -29,6 +29,7 @@
 *.csproj.nuget.g.props
 *.csproj.nuget.g.targets
 *project.assets.json
+*.dtbcache.v2
 
 
 # Arquivos específicos do usuário (MonoDevelop / Xamarin Studio)

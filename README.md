@@ -13,3 +13,6 @@ Atalhos uteis
 	Rodar o Projeto
 		
 		CTRL + F5
+		
+	Console.WriteLine();
+		cw + TAB + TAB
