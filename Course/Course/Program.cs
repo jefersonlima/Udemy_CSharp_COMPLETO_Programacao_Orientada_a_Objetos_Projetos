@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Course
 {
@@ -70,6 +71,52 @@ namespace Course
 
             //Console.WriteLine(obj1);
             //Console.WriteLine(obj2);
+            #endregion
+
+            #region 18. Saída de dados em C#
+            
+            #region Console.Write e Console.WriteLine
+            Console.Write("Bom dia!");
+            Console.WriteLine("Boa tarde!");
+            Console.WriteLine("Boa noite!");
+            #endregion
+
+            Console.WriteLine("----------------------");
+
+            #region Imprimindo Variáveis
+            char genero = 'F';
+            int idade = 32;
+            double saldo = 10.35784;
+            string nome = "Maria";
+
+            Console.WriteLine(genero);
+            Console.WriteLine(idade);
+            Console.WriteLine(saldo);
+            Console.WriteLine(nome);
+            #endregion
+
+            Console.WriteLine("----------------------");
+
+            #region Controlando casas decimais
+            Console.WriteLine(saldo.ToString("F2"));
+            Console.WriteLine(saldo.ToString("F4"));
+            Console.WriteLine(saldo.ToString("F4", CultureInfo.InvariantCulture));
+            #endregion
+
+            Console.WriteLine("----------------------");
+
+            #region Placeholder
+            Console.WriteLine("{0} tem {1} anos e tem saldo igual a {2:F2} reais", nome, idade, saldo);
+            #endregion
+
+            #region Interpolação
+            Console.WriteLine($"{nome} tem {idade} anos e tem saldo igual a {saldo:F2} reais");
+            #endregion
+
+            #region Concatenação
+            Console.WriteLine(nome + " tem " + idade + " anos e tem saldo igual a " + saldo.ToString("f2", CultureInfo.InvariantCulture). + " reais", nome, idade, saldo);
+            #endregion
+
             #endregion
         }
     }
