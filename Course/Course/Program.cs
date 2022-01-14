@@ -184,33 +184,60 @@ namespace Course
             #endregion
 
             #region 21. Operadores aritméticos
-            int n1 = 3 + 4 * 2;
-            Console.WriteLine(n1);
+            //int n1 = 3 + 4 * 2;
+            //Console.WriteLine(n1);
 
-            int n2 = (3 + 4) * 2;
-            Console.WriteLine(n2);
+            //int n2 = (3 + 4) * 2;
+            //Console.WriteLine(n2);
 
-            int n3 = 17 % 3; //resto da divisão
-            Console.WriteLine(n3);
+            //int n3 = 17 % 3; //resto da divisão
+            //Console.WriteLine(n3);
 
-            int n4 = 10 / 8;
-            Console.WriteLine(n4);
-            double n4_1 = (double)10 / 8;
-            Console.WriteLine(n4_1);
-            double n4_2 = 10.0 / 8;
-            Console.WriteLine(n4_2);
+            //int n4 = 10 / 8;
+            //Console.WriteLine(n4);
+            //double n4_1 = (double)10 / 8;
+            //Console.WriteLine(n4_1);
+            //double n4_2 = 10.0 / 8;
+            //Console.WriteLine(n4_2);
 
-            double a = 1.0, b = -3.0, c = -4.0;
-            //double delta = b * b - 4.0 * a * c;
-            double delta = Math.Pow(b, 2.0) - 4.0 * a * c;
+            //#region Baskara
+            //double a = 1.0, b = -3.0, c = -4.0;
+            ////double delta = b * b - 4.0 * a * c;
+            //double delta = Math.Pow(b, 2.0) - 4.0 * a * c;
 
-            double x1 = (-b + Math.Sqrt(delta)) / (2.0 * a);
-            double x2 = (-b - Math.Sqrt(delta)) / (2.0 * a);
-            Console.WriteLine(delta);
-            Console.WriteLine(x1);
-            Console.WriteLine(x2);
+            //double x1 = (-b + Math.Sqrt(delta)) / (2.0 * a);
+            //double x2 = (-b - Math.Sqrt(delta)) / (2.0 * a);
+            //Console.WriteLine(delta);
+            //Console.WriteLine(x1);
+            //Console.WriteLine(x2);
+            //#endregion
 
+            #endregion
 
+            #region 22. Entrada de dados em C# - PARTE 1
+            string frase = Console.ReadLine();
+            string x = Console.ReadLine();
+            string y = Console.ReadLine();
+            string z = Console.ReadLine();
+
+            Console.WriteLine("Você digitou: ");
+            Console.WriteLine(frase);
+            Console.WriteLine(x);
+            Console.WriteLine(y);
+            Console.WriteLine(z);
+
+            #region Split
+            //string s = Console.ReadLine();
+            //string[] v = s.Split(' ');
+            string[] v = Console.ReadLine().Split(' ');
+            string a = v[0];
+            string b = v[1];
+            string c = v[2];
+
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(c);
+            #endregion
             #endregion
         }
     }
