@@ -158,29 +158,59 @@ namespace Course
             #endregion
 
             #region 20. Conversão implícita e casting
-            //Conversão de float para double(casting)
-            float a = 4.5f;
-            double b = a;
-            Console.WriteLine(b);
+            ////Conversão de float para double(casting)
+            //float a = 4.5f;
+            //double b = a;
+            //Console.WriteLine(b);
 
-            //Conversão de double para float(casting)
-            double c = 5.1;
-            float d = (float)c; 
-            Console.WriteLine(d);
+            ////Conversão de double para float(casting)
+            //double c = 5.1;
+            //float d = (float)c; 
+            //Console.WriteLine(d);
 
-            //Conversão de double para int(casting)
-            double e = 5.1;
-            int f = (int)e;
-            Console.WriteLine(f);
+            ////Conversão de double para int(casting)
+            //double e = 5.1;
+            //int f = (int)e;
+            //Console.WriteLine(f);
 
-            //conversão de divisão de inteiro para double
-            int g = 5;
-            int h = 2;
-            double resultado = g / h; //vai retornar um inteiro
-            Console.WriteLine(resultado);
+            ////conversão de divisão de inteiro para double
+            //int g = 5;
+            //int h = 2;
+            //double resultado = g / h; //vai retornar um inteiro
+            //Console.WriteLine(resultado);
 
-            resultado = (double)g / h;
-            Console.WriteLine(resultado);
+            //resultado = (double)g / h;
+            //Console.WriteLine(resultado);
+            #endregion
+
+            #region 21. Operadores aritméticos
+            int n1 = 3 + 4 * 2;
+            Console.WriteLine(n1);
+
+            int n2 = (3 + 4) * 2;
+            Console.WriteLine(n2);
+
+            int n3 = 17 % 3; //resto da divisão
+            Console.WriteLine(n3);
+
+            int n4 = 10 / 8;
+            Console.WriteLine(n4);
+            double n4_1 = (double)10 / 8;
+            Console.WriteLine(n4_1);
+            double n4_2 = 10.0 / 8;
+            Console.WriteLine(n4_2);
+
+            double a = 1.0, b = -3.0, c = -4.0;
+            //double delta = b * b - 4.0 * a * c;
+            double delta = Math.Pow(b, 2.0) - 4.0 * a * c;
+
+            double x1 = (-b + Math.Sqrt(delta)) / (2.0 * a);
+            double x2 = (-b - Math.Sqrt(delta)) / (2.0 * a);
+            Console.WriteLine(delta);
+            Console.WriteLine(x1);
+            Console.WriteLine(x2);
+
+
             #endregion
         }
     }
