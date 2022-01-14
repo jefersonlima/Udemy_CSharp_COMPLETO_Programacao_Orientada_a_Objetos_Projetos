@@ -8,9 +8,9 @@ namespace Course
         static void Main(string[] args)
         {
             #region Byte
-            sbyte b = sbyte.MinValue;
+            //sbyte b = sbyte.MinValue;
 
-            Console.WriteLine(b);
+            //Console.WriteLine(b);
             #endregion
 
             #region Inteiros
@@ -114,8 +114,46 @@ namespace Course
             #endregion
 
             #region Concatenação
-            Console.WriteLine(nome + " tem " + idade + " anos e tem saldo igual a " + saldo.ToString("f2", CultureInfo.InvariantCulture). + " reais", nome, idade, saldo);
+            Console.WriteLine(nome + " tem " + idade + " anos e tem saldo igual a " + saldo.ToString("f2", CultureInfo.InvariantCulture) + " reais", nome, idade, saldo);
             #endregion
+
+            #endregion
+
+            #region 19. Operadores de atribuição
+            int a = 10;
+            Console.WriteLine(a);
+
+            a += 2;
+            Console.WriteLine(a);
+
+            a *= 3;
+            Console.WriteLine(a);
+
+            string s = "ABC";
+            Console.WriteLine(s);
+
+            s += "DEF";
+            Console.WriteLine(s);
+
+            a = 10;
+            a++;
+
+            Console.WriteLine(a);
+
+            a = 10;
+            a--;
+
+            Console.WriteLine(a);
+
+            a = 10;
+            int b = a++;
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+
+            a = 10;
+            b = ++a;
+            Console.WriteLine(a);
+            Console.WriteLine(b);
 
             #endregion
         }
