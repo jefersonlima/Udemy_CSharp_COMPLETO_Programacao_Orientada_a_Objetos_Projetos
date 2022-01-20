@@ -241,27 +241,52 @@ namespace Course
             #endregion
 
             #region 23. Entrada de dados em C# - PARTE 2
-            int n1 = int.Parse(Console.ReadLine());
-            //int n1_1 = Convert.ToInt32(Console.ReadLine());
-            char ch = char.Parse(Console.ReadLine());
-            double n2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //int n1 = int.Parse(Console.ReadLine());
+            ////int n1_1 = Convert.ToInt32(Console.ReadLine());
+            //char ch = char.Parse(Console.ReadLine());
+            //double n2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine(n1);
-            Console.WriteLine(ch);
-            Console.WriteLine(n2.ToString("f2", CultureInfo.InvariantCulture));
+            //Console.WriteLine(n1);
+            //Console.WriteLine(ch);
+            //Console.WriteLine(n2.ToString("f2", CultureInfo.InvariantCulture));
 
-            string[] vet = Console.ReadLine().Split(' ');
+            //string[] vet = Console.ReadLine().Split(' ');
 
-            string nome = vet[0];
-            char sexo = char.Parse(vet[1]);
-            int idade = int.Parse(vet[2]);
-            double altura = double.Parse(vet[3], CultureInfo.InvariantCulture);
+            //string nome = vet[0];
+            //char sexo = char.Parse(vet[1]);
+            //int idade = int.Parse(vet[2]);
+            //double altura = double.Parse(vet[3], CultureInfo.InvariantCulture);
 
-            Console.WriteLine(nome);
-            Console.WriteLine(sexo);
-            Console.WriteLine(idade);
-            Console.WriteLine(altura);
-            Console.WriteLine(altura.ToString("f2", CultureInfo.InvariantCulture));
+            //Console.WriteLine(nome);
+            //Console.WriteLine(sexo);
+            //Console.WriteLine(idade);
+            //Console.WriteLine(altura);
+            //Console.WriteLine(altura.ToString("f2", CultureInfo.InvariantCulture));
+            #endregion
+
+            #region 25. Operadores comparativos
+            int a = 10;
+            bool c1 = a < 10;
+            bool c2 = a < 20;
+            bool c3 = a > 10;
+            bool c4 = a > 5;
+
+            Console.WriteLine(c1);
+            Console.WriteLine(c2);
+            Console.WriteLine(c3);
+            Console.WriteLine(c4);
+
+            Console.WriteLine("-------------------------");
+
+            bool c5 = a <= 10;
+            bool c6 = a >= 10;
+            bool c7 = a == 10;
+            bool c8 = a != 10;
+
+            Console.WriteLine(c5);
+            Console.WriteLine(c6);
+            Console.WriteLine(c7);
+            Console.WriteLine(c8);
 
             #endregion
         }
