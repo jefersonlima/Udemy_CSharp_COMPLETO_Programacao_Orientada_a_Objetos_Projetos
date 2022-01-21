@@ -290,24 +290,60 @@ namespace Course
             #endregion
 
             #region 26. Operadores lógicos
-            //AND-&&
-            bool c1 = 4 != 5;
-            Console.WriteLine(c1);
+            ////AND-&&
+            //bool c1 = 4 != 5;
+            //Console.WriteLine(c1);
 
-            c1 = 2>3 && 4 != 5;
-            Console.WriteLine(c1);
+            //c1 = 2>3 && 4 != 5;
+            //Console.WriteLine(c1);
 
-            bool c2 = !(2 > 3) && 4 != 5;
-            Console.WriteLine(c2);
+            //bool c2 = !(2 > 3) && 4 != 5;
+            //Console.WriteLine(c2);
 
-            //OR-||
-            c1 = 2 > 3 || 4 != 5;
-            Console.WriteLine(c1);
+            ////OR-||
+            //c1 = 2 > 3 || 4 != 5;
+            //Console.WriteLine(c1);
 
-            Console.WriteLine("----------");
-            bool c3 = 10 < 5;
-            bool c4 = c1 || c2 && c3;
-            Console.WriteLine(c4);
+            //Console.WriteLine("----------");
+            //bool c3 = 10 < 5;
+            //bool c4 = c1 || c2 && c3;
+            //Console.WriteLine(c4);
+            #endregion
+
+            #region 27. Estrutura condicional (if-else)
+            //int x = 10;
+
+            //Console.WriteLine("Bom dia!");
+            ////if (x < 5)
+            //if (x > 5)
+            //{
+            //    Console.WriteLine("Boa tarde!");
+            //}
+            //Console.WriteLine("Boa noite!");
+            //Console.WriteLine("-----");
+            //Console.WriteLine("Entre com um numero inteiro!");
+            //int x = int.Parse(Console.ReadLine());
+
+            //if (x % 2 == 0)
+            //{
+            //    Console.WriteLine("Par");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Impar");
+            //}
+            Console.WriteLine("---------");
+            Console.WriteLine("qual a hora atual?");
+            int hora = int.Parse(Console.ReadLine());
+
+            if (hora < 12 && hora >= 5)
+                Console.WriteLine("Bom dia!");
+            else if (hora >= 12 && hora < 18)
+                Console.WriteLine("Boa tarde!");
+            else if (hora >= 18 && hora < 24 || (hora < 5 && hora >= 0))
+                Console.WriteLine("Boa noite!");
+            else
+                Console.WriteLine("Hora invalida!");
             #endregion
         }
     }
