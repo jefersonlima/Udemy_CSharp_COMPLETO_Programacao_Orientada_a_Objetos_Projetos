@@ -332,18 +332,46 @@ namespace Course
             //{
             //    Console.WriteLine("Impar");
             //}
-            Console.WriteLine("---------");
-            Console.WriteLine("qual a hora atual?");
-            int hora = int.Parse(Console.ReadLine());
+            //Console.WriteLine("---------");
+            //Console.WriteLine("qual a hora atual?");
+            //int hora = int.Parse(Console.ReadLine());
 
-            if (hora < 12 && hora >= 5)
-                Console.WriteLine("Bom dia!");
-            else if (hora >= 12 && hora < 18)
-                Console.WriteLine("Boa tarde!");
-            else if (hora >= 18 && hora < 24 || (hora < 5 && hora >= 0))
-                Console.WriteLine("Boa noite!");
-            else
-                Console.WriteLine("Hora invalida!");
+            //if (hora < 12 && hora >= 5)
+            //    Console.WriteLine("Bom dia!");
+            //else if (hora >= 12 && hora < 18)
+            //    Console.WriteLine("Boa tarde!");
+            //else if (hora >= 18 && hora < 24 || (hora < 5 && hora >= 0))
+            //    Console.WriteLine("Boa noite!");
+            //else
+            //    Console.WriteLine("Hora invalida!");
+            #endregion
+
+            #region 28. Escopo e inicialização
+            //para usar uma variavel ela precisa ser inicializada!
+            //int x; errado!
+            int x = 0; //correto
+
+            Console.WriteLine(x);
+
+            double preco = double.Parse(Console.ReadLine());
+            if (preco > 100.0)
+            {
+                double desconto = preco * 0.1;
+                Console.WriteLine(desconto); //correto 
+            }
+
+            //errado porquê o desconto só existe dentro do escopo do if onde ele foi criado!
+            //Console.WriteLine(desconto); //errado
+
+            //outra maneira é criando a variavel em um escopo maior
+            double preco2 = double.Parse(Console.ReadLine());
+            double desconto2 = 0;
+            if (preco > 100.0)
+            {
+                desconto2 = preco2 * 0.1;
+            }
+            Console.WriteLine(desconto2); //errado
+
             #endregion
         }
     }
