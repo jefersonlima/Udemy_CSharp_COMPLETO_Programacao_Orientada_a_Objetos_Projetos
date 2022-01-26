@@ -349,30 +349,57 @@ namespace Course
             #region 28. Escopo e inicialização
             //para usar uma variavel ela precisa ser inicializada!
             //int x; errado!
-            int x = 0; //correto
+            //int x = 0; //correto
 
-            Console.WriteLine(x);
+            //Console.WriteLine(x);
 
-            double preco = double.Parse(Console.ReadLine());
-            if (preco > 100.0)
-            {
-                double desconto = preco * 0.1;
-                Console.WriteLine(desconto); //correto 
-            }
+            //double preco = double.Parse(Console.ReadLine());
+            //if (preco > 100.0)
+            //{
+            //    double desconto = preco * 0.1;
+            //    Console.WriteLine(desconto); //correto 
+            //}
 
-            //errado porquê o desconto só existe dentro do escopo do if onde ele foi criado!
-            //Console.WriteLine(desconto); //errado
+            ////errado porquê o desconto só existe dentro do escopo do if onde ele foi criado!
+            ////Console.WriteLine(desconto); //errado
 
-            //outra maneira é criando a variavel em um escopo maior
-            double preco2 = double.Parse(Console.ReadLine());
-            double desconto2 = 0;
-            if (preco > 100.0)
-            {
-                desconto2 = preco2 * 0.1;
-            }
-            Console.WriteLine(desconto2); //errado
+            ////outra maneira é criando a variavel em um escopo maior
+            //double preco2 = double.Parse(Console.ReadLine());
+            //double desconto2 = 0.0;
+            //if (preco > 100.0)
+            //{
+            //    desconto2 = preco2 * 0.1;
+            //}
+            //Console.WriteLine(desconto2); //errado
 
             #endregion
+
+            #region 30. Funções (sintaxe)
+            Console.WriteLine("Digite três números: ");
+            int n1 = int.Parse(Console.ReadLine());
+            int n2 = int.Parse(Console.ReadLine());
+            int n3 = int.Parse(Console.ReadLine());
+
+            int resultado = Maior(n1, n2, n3);
+            Console.WriteLine("O maior número é: " + resultado);
+            #endregion
+        }
+
+        static int Maior(int n1, int n2, int n3)
+        {
+            int maior = 0;
+            if (n1 > n2 && n1 > n3)
+            {
+                maior = n1;
+            }else if(n2 > n3)
+            {
+                maior = n2;
+            }
+            else
+            {
+                maior = n3;
+            }
+            return maior;
         }
     }
 }
