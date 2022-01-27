@@ -375,16 +375,33 @@ namespace Course
             #endregion
 
             #region 30. Funções (sintaxe)
-            Console.WriteLine("Digite três números: ");
-            int n1 = int.Parse(Console.ReadLine());
-            int n2 = int.Parse(Console.ReadLine());
-            int n3 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Digite três números: ");
+            //int n1 = int.Parse(Console.ReadLine());
+            //int n2 = int.Parse(Console.ReadLine());
+            //int n3 = int.Parse(Console.ReadLine());
 
-            int resultado = Maior(n1, n2, n3);
-            Console.WriteLine("O maior número é: " + resultado);
+            //int resultado = Maior(n1, n2, n3);
+            //Console.WriteLine("O maior número é: " + resultado);
+            #endregion
+
+            #region 32. Estrutura repetitiva enquanto (while)
+            double x = 0.0;
+            while (x >= 0.0) {
+                Console.WriteLine("Digite um número: ");
+                x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+                double raiz = Math.Sqrt(x);
+                if (raiz >= 0.0) {
+                    Console.WriteLine(raiz.ToString("F3", CultureInfo.InvariantCulture));
+                }
+                else
+                {
+                    Console.WriteLine("Numero digitado negativo!");
+                }               
+            }
             #endregion
         }
-
+        #region Função para verificar qual o maior numero entre 3 digitados
         static int Maior(int n1, int n2, int n3)
         {
             int maior = 0;
@@ -401,5 +418,6 @@ namespace Course
             }
             return maior;
         }
+        #endregion
     }
 }
