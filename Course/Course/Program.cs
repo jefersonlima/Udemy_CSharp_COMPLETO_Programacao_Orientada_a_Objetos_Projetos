@@ -448,43 +448,98 @@ namespace Course
             #endregion
 
             #region 39. Criando uma classe com três atributos para representar melhor um Triângulo
-            Triangulo x, y;
-            x = new Triangulo();
-            y = new Triangulo();
+            //Triangulo x, y;
+            //x = new Triangulo();
+            //y = new Triangulo();
 
-            Console.WriteLine("Entre com as medidas do triangulo X: ");
-            x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.WriteLine("Entre com as medidas do triangulo X: ");
+            //x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Entre com as medidas do triangulo Y: ");
-            y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.WriteLine("Entre com as medidas do triangulo Y: ");
+            //y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double p, areaX, areaY;
+            //double p, areaX, areaY;
 
-            p = (x.A + x.B + x.C) / 2.0;
-            areaX = Math.Sqrt(p * (p - x.A) * (p - x.B) * (p - x.C));
+            //p = (x.A + x.B + x.C) / 2.0;
+            //areaX = Math.Sqrt(p * (p - x.A) * (p - x.B) * (p - x.C));
 
-            p = (y.A + y.B + y.C) / 2.0;
-            areaY = Math.Sqrt(p * (p - y.A) * (p - y.B) * (p - y.C));
+            //p = (y.A + y.B + y.C) / 2.0;
+            //areaY = Math.Sqrt(p * (p - y.A) * (p - y.B) * (p - y.C));
 
-            Console.WriteLine("Área de x = {0}", areaX.ToString("F4", CultureInfo.InvariantCulture));
-            Console.WriteLine("Área de y = {0}", areaY.ToString("F4", CultureInfo.InvariantCulture));
+            //Console.WriteLine("Área de x = {0}", areaX.ToString("F4", CultureInfo.InvariantCulture));
+            //Console.WriteLine("Área de y = {0}", areaY.ToString("F4", CultureInfo.InvariantCulture));
 
-            if (areaX == areaY)
+            //if (areaX == areaY)
+            //{
+            //    Console.WriteLine("Áreas são iguais!");
+            //}
+            //else if (areaX > areaY)
+            //{
+            //    Console.WriteLine("Maior área: X");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Maior área: Y");
+            //}
+            #endregion
+
+            #region 40. Primeiros exercícios (classes, objetos e atributos)
+
+            #region Exercicio 1
+            Pessoa pessoa1;
+            Pessoa pessoa2;
+
+            pessoa1 = new Pessoa();
+            pessoa2 = new Pessoa();
+
+            Console.WriteLine("Dados da primeira pessoa: ");
+            Console.Write("Nome: ");
+            pessoa1.Nome = Console.ReadLine();
+            Console.Write("Idade: ");
+            pessoa1.Idade = int.Parse(Console.ReadLine());
+            Console.WriteLine("Dados da segunda pessoa: ");
+            Console.Write("Nome: ");
+            pessoa2.Nome = Console.ReadLine();
+            Console.Write("Idade: ");
+            pessoa2.Idade = int.Parse(Console.ReadLine());
+
+            if (pessoa1.Idade == pessoa2.Idade)
             {
-                Console.WriteLine("Áreas são iguais!");
+                Console.WriteLine("Tem a mesma idade!");
             }
-            else if (areaX > areaY)
+            else if (pessoa1.Idade > pessoa2.Idade)
             {
-                Console.WriteLine("Maior área: X");
+                Console.WriteLine("Pessoa mais velha: {0}", pessoa1.Nome);
             }
             else
             {
-                Console.WriteLine("Maior área: Y");
+                Console.WriteLine("Pessoa mais velha: {0}", pessoa2.Nome);
             }
+            #endregion
+
+            #region Exercicio 2
+            Funcionario funcionario1 = new Funcionario();
+            Funcionario funcionario2 = new Funcionario();
+
+            Console.WriteLine("Dados do primeiro funcionario");
+            Console.Write("Nome: ");
+            funcionario1.Nome = Console.ReadLine();
+            Console.Write("Salário: ");
+            funcionario1.Salario = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Dados do segundo funcionario");
+            Console.Write("Nome: ");
+            funcionario2.Nome = Console.ReadLine();
+            Console.Write("Salário");
+            funcionario2.Salario = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Sálario médio: {0}", ((funcionario1.Salario + funcionario2.Salario)/2).ToString("F2", CultureInfo.InvariantCulture));
+            #endregion
+
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
