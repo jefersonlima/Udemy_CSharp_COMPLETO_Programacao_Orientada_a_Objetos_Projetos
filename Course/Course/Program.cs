@@ -593,6 +593,19 @@ namespace Course
             #endregion
 
             #region 43. Object e ToString
+            //Produto p = new Produto();
+            //Console.WriteLine("Entre os dados do Produto:");
+            //Console.Write("Nome: ");
+            //p.Nome = Console.ReadLine();
+            //Console.Write("Preço: ");
+            //p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.Write("Quantidade no estoque: ");
+            //p.Quantidade = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Dados do produto: " + p);
+            #endregion
+
+            #region 44. Terminando de construir o programa
             Produto p = new Produto();
             Console.WriteLine("Entre os dados do Produto:");
             Console.Write("Nome: ");
@@ -602,6 +615,25 @@ namespace Course
             Console.Write("Quantidade no estoque: ");
             p.Quantidade = int.Parse(Console.ReadLine());
 
+            Console.WriteLine();
+            Console.WriteLine("Dados do produto: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser adicionado: ");
+            int qte = int.Parse(Console.ReadLine());
+            p.AdicionarProdutos(qte);
+            Console.WriteLine("Dados Atualizados!");
+
+            Console.WriteLine();
+            Console.WriteLine("Dados do produto: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser removidos: ");
+            qte = int.Parse(Console.ReadLine());
+            p.RemoverProdutos(qte);
+            Console.WriteLine("Dados Atualizados!");
+
+            Console.WriteLine();
             Console.WriteLine("Dados do produto: " + p);
             #endregion
         }
