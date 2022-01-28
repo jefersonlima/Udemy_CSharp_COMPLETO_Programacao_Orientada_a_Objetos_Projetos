@@ -580,6 +580,19 @@ namespace Course
             #endregion
 
             #region 42. Começando a resolver um segundo problema exemplo
+            //Produto p = new Produto();
+            //Console.WriteLine("Entre os dados do Produto:");
+            //Console.Write("Nome: ");
+            //p.Nome = Console.ReadLine();
+            //Console.Write("Preço: ");
+            //p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.Write("Quantidade no estoque: ");
+            //p.Quantidade = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Dados do produto: " + p);
+            #endregion
+
+            #region 43. Object e ToString
             Produto p = new Produto();
             Console.WriteLine("Entre os dados do Produto:");
             Console.Write("Nome: ");
@@ -599,7 +612,8 @@ namespace Course
             if (n1 > n2 && n1 > n3)
             {
                 maior = n1;
-            }else if(n2 > n3)
+            }
+            else if (n2 > n3)
             {
                 maior = n2;
             }

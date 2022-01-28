@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Course
@@ -13,6 +14,17 @@ namespace Course
         public double ValorTotalEmEstoque()
         {
             return Preco * Quantidade;
+        }
+
+        public override string ToString()
+        {
+            return Nome 
+                + ", Preço $ " 
+                + Preco.ToString("F2", CultureInfo.InvariantCulture) 
+                + ", " 
+                + Quantidade 
+                + " Unidades, Total: $ " 
+                + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
