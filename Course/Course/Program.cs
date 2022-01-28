@@ -543,40 +543,53 @@ namespace Course
             #endregion
 
             #region 41. Criando um método para obtermos os benefícios de reaproveitamento e delegação
-            Triangulo x, y;
-            x = new Triangulo();
-            y = new Triangulo();
+            //Triangulo x, y;
+            //x = new Triangulo();
+            //y = new Triangulo();
 
-            Console.WriteLine("Entre com as medidas do triangulo X: ");
-            x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.WriteLine("Entre com as medidas do triangulo X: ");
+            //x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Entre com as medidas do triangulo Y: ");
-            y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.WriteLine("Entre com as medidas do triangulo Y: ");
+            //y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            double areaX, areaY;
+            //double areaX, areaY;
 
-            areaX = x.AreaTrinagulo();
-            areaY = y.AreaTrinagulo();
+            //areaX = x.AreaTrinagulo();
+            //areaY = y.AreaTrinagulo();
 
-            Console.WriteLine("Área de x = {0}", areaX.ToString("F4", CultureInfo.InvariantCulture));
-            Console.WriteLine("Área de y = {0}", areaY.ToString("F4", CultureInfo.InvariantCulture));
+            //Console.WriteLine("Área de x = {0}", areaX.ToString("F4", CultureInfo.InvariantCulture));
+            //Console.WriteLine("Área de y = {0}", areaY.ToString("F4", CultureInfo.InvariantCulture));
 
-            if (areaX == areaY)
-            {
-                Console.WriteLine("Áreas são iguais!");
-            }
-            else if (areaX > areaY)
-            {
-                Console.WriteLine("Maior área: X");
-            }
-            else
-            {
-                Console.WriteLine("Maior área: Y");
-            }
+            //if (areaX == areaY)
+            //{
+            //    Console.WriteLine("Áreas são iguais!");
+            //}
+            //else if (areaX > areaY)
+            //{
+            //    Console.WriteLine("Maior área: X");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Maior área: Y");
+            //}
+            #endregion
+
+            #region 42. Começando a resolver um segundo problema exemplo
+            Produto p = new Produto();
+            Console.WriteLine("Entre os dados do Produto:");
+            Console.Write("Nome: ");
+            p.Nome = Console.ReadLine();
+            Console.Write("Preço: ");
+            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Quantidade no estoque: ");
+            p.Quantidade = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Dados do produto: " + p);
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
