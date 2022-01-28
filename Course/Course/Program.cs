@@ -402,15 +402,49 @@ namespace Course
             #endregion
 
             #region 34. Estrutura repetitiva para (for)
-            Console.WriteLine("Quantos numeros você vai digitar? ");
-            int quantidadeNumeros = int.Parse(Console.ReadLine());
-            int total = 0;
-            for (int i = 1; i <= quantidadeNumeros; i++)
+            //Console.WriteLine("Quantos numeros você vai digitar? ");
+            //int quantidadeNumeros = int.Parse(Console.ReadLine());
+            //int total = 0;
+            //for (int i = 1; i <= quantidadeNumeros; i++)
+            //{
+            //    Console.Write("Valor #{0}: ", i);
+            //    total += int.Parse(Console.ReadLine());
+            //}
+            //Console.WriteLine("Total da soma = "+ total);
+            #endregion
+
+            #region 38. Resolvendo um problema sem orientação a objetos
+            double xA, xB, xC, yA, yB, yC, p, areaX, areaY;
+            Console.WriteLine("Entre com as medidas do triangulo X: ");
+            xA = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            xB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            xC = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            Console.WriteLine("Entre com as medidas do triangulo Y: ");
+            yA = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            yB = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            yC = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            p = (xA + xB + xC) / 2.0;
+            areaX = Math.Sqrt(p * (p - xA) * (p - xB) * (p - xC));
+
+            p = (yA + yB + yC) / 2.0;
+            areaY = Math.Sqrt(p * (p - yA) * (p - yB) * (p - yC));
+
+            Console.WriteLine("Área de x = {0}", areaX.ToString("F4", CultureInfo.InvariantCulture));
+            Console.WriteLine("Área de y = {0}", areaY.ToString("F4", CultureInfo.InvariantCulture));
+
+            if (areaX == areaY)
             {
-                Console.Write("Valor #{0}: ", i);
-                total += int.Parse(Console.ReadLine());
+                Console.WriteLine("Áreas são iguais!");
+            }else if(areaX > areaY)
+            {
+                Console.WriteLine("Maior área: X");
             }
-            Console.WriteLine("Total da soma = "+ total);
+            else
+            {
+                Console.WriteLine("Maior área: Y");
+            }
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
