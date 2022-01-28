@@ -385,20 +385,32 @@ namespace Course
             #endregion
 
             #region 32. Estrutura repetitiva enquanto (while)
-            double x = 0.0;
-            while (x >= 0.0) {
-                Console.WriteLine("Digite um número: ");
-                x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //double x = 0.0;
+            //while (x >= 0.0) {
+            //    Console.WriteLine("Digite um número: ");
+            //    x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-                double raiz = Math.Sqrt(x);
-                if (raiz >= 0.0) {
-                    Console.WriteLine(raiz.ToString("F3", CultureInfo.InvariantCulture));
-                }
-                else
-                {
-                    Console.WriteLine("Numero digitado negativo!");
-                }               
+            //    double raiz = Math.Sqrt(x);
+            //    if (raiz >= 0.0) {
+            //        Console.WriteLine(raiz.ToString("F3", CultureInfo.InvariantCulture));
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Numero digitado negativo!");
+            //    }               
+            //}
+            #endregion
+
+            #region 34. Estrutura repetitiva para (for)
+            Console.WriteLine("Quantos numeros você vai digitar? ");
+            int quantidadeNumeros = int.Parse(Console.ReadLine());
+            int total = 0;
+            for (int i = 1; i <= quantidadeNumeros; i++)
+            {
+                Console.Write("Valor #{0}: ", i);
+                total += int.Parse(Console.ReadLine());
             }
+            Console.WriteLine("Total da soma = "+ total);
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
