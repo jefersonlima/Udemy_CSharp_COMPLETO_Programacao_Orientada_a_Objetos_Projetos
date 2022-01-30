@@ -606,35 +606,87 @@ namespace Course
             #endregion
 
             #region 44. Terminando de construir o programa
-            Produto p = new Produto();
-            Console.WriteLine("Entre os dados do Produto:");
-            Console.Write("Nome: ");
-            p.Nome = Console.ReadLine();
-            Console.Write("Preço: ");
-            p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            Console.Write("Quantidade no estoque: ");
-            p.Quantidade = int.Parse(Console.ReadLine());
+            //Produto p = new Produto();
+            //Console.WriteLine("Entre os dados do Produto:");
+            //Console.Write("Nome: ");
+            //p.Nome = Console.ReadLine();
+            //Console.Write("Preço: ");
+            //p.Preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.Write("Quantidade no estoque: ");
+            //p.Quantidade = int.Parse(Console.ReadLine());
 
-            Console.WriteLine();
-            Console.WriteLine("Dados do produto: " + p);
+            //Console.WriteLine();
+            //Console.WriteLine("Dados do produto: " + p);
 
-            Console.WriteLine();
-            Console.Write("Digite o número de produtos a ser adicionado: ");
-            int qte = int.Parse(Console.ReadLine());
-            p.AdicionarProdutos(qte);
-            Console.WriteLine("Dados Atualizados!");
+            //Console.WriteLine();
+            //Console.Write("Digite o número de produtos a ser adicionado: ");
+            //int qte = int.Parse(Console.ReadLine());
+            //p.AdicionarProdutos(qte);
+            //Console.WriteLine("Dados Atualizados!");
 
-            Console.WriteLine();
-            Console.WriteLine("Dados do produto: " + p);
+            //Console.WriteLine();
+            //Console.WriteLine("Dados do produto: " + p);
 
-            Console.WriteLine();
-            Console.Write("Digite o número de produtos a ser removidos: ");
-            qte = int.Parse(Console.ReadLine());
-            p.RemoverProdutos(qte);
-            Console.WriteLine("Dados Atualizados!");
+            //Console.WriteLine();
+            //Console.Write("Digite o número de produtos a ser removidos: ");
+            //qte = int.Parse(Console.ReadLine());
+            //p.RemoverProdutos(qte);
+            //Console.WriteLine("Dados Atualizados!");
 
-            Console.WriteLine();
-            Console.WriteLine("Dados do produto: " + p);
+            //Console.WriteLine();
+            //Console.WriteLine("Dados do produto: " + p);
+            #endregion
+
+            #region 45. Exercícios propostos (classes, atributos e métodos)
+            #region Exercicio 1
+            //Console.WriteLine("Informe os dados do Retangulo:");
+            //Retangulo retangulo = new Retangulo();
+            //Console.WriteLine("Entre a Largura e Altura do Retangulo:");
+            //Console.Write("Largura: ");
+            //retangulo.Largura = double.Parse(Console.ReadLine());
+            //Console.Write("Altura: ");
+            //retangulo.Altura = double.Parse(Console.ReadLine());
+
+            //Console.WriteLine("AREA = {0}", retangulo.CalculaAreaRetangulo());
+            //Console.WriteLine("PERÍMETRO = {0}", retangulo.CalculaPerimetroRetangulo());
+            //Console.WriteLine("DIAGONAL = {0}", retangulo.CalculaDiagonalRetangulo());
+            #endregion
+
+            #region Exercicio 2
+            //Console.WriteLine("Informe os dados do Funcionário:");
+            //Funcionario funcionario = new Funcionario();
+            //Console.Write("Nome: ");
+            //funcionario.Nome = Console.ReadLine();
+            //Console.Write("Salario Bruto: ");
+            //funcionario.SalarioBruto = double.Parse(Console.ReadLine());
+            //Console.Write("Imposto: ");
+            //funcionario.Imposto = double.Parse(Console.ReadLine());
+
+            //Console.WriteLine("Funcionário {0}", funcionario);
+
+            //Console.WriteLine();
+            //Console.Write("Digite uma porcentagem para aumentar: ");
+            //funcionario.AumentarSalario(double.Parse(Console.ReadLine()));
+
+            //Console.WriteLine();
+            //Console.WriteLine("Dados atualizados: {0}", funcionario);
+            #endregion
+
+            #region Exercicio 3
+            Aluno aluno = new Aluno();
+            Console.WriteLine("Informe os dados do aluno:");
+            Console.Write("Nome do aluno: ");
+            aluno.Nome = Console.ReadLine();
+            Console.Write("Primeira do aluno: ");
+            aluno.Nota1 = double.Parse(Console.ReadLine());
+            Console.Write("Segunda do aluno: ");
+            aluno.Nota2 = double.Parse(Console.ReadLine());
+            Console.Write("Terceira do aluno: ");
+            aluno.Nota3 = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Nota Final = {0}", aluno.NotaFinal().ToString("F2", CultureInfo.InvariantCulture));
+            aluno.VerificaAprovacao();
+            #endregion
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
