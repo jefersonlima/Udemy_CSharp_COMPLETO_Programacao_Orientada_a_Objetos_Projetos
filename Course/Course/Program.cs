@@ -773,7 +773,21 @@ namespace Course
             #endregion
 
             #region 53. Sintaxe alternativa para inicializar valores
-            Produto p = new Produto { Nome = "TV", Preco = 900, Quantidade = 20 };
+            //Produto p = new Produto { 
+            //    Nome = "TV", 
+            //    Preco = 900, 
+            //    Quantidade = 20 };
+            //Console.WriteLine(p);
+            #endregion
+
+            #region 54. Palavra this
+            Produto p = new Produto
+            {
+                Nome = "TV",
+                Preco = 900,
+                Quantidade = 20,
+                testeThisNoConstrutor = 0
+            };
             Console.WriteLine(p);
             #endregion
         }

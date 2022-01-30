@@ -10,49 +10,53 @@ namespace Course
         public string Nome;
         public double Preco;
         public int Quantidade;
+        public int testeThisNoConstrutor;
         public Produto()
         {
-            Nome = null;
-            Preco = 0.0;
-            Quantidade = 0;
+            this.Nome = null;
+            this.Preco = 0.0;
+            this.Quantidade = 0;
+        }
+        public Produto(string nome, double preco)
+        {
+            this.Nome = nome;
+            this.Preco = preco;
+            this.Quantidade = 5;
         }
 
         public Produto(string nome, double preco, int quantidade)
         {
-            Nome = nome;
-            Preco = preco;
-            Quantidade = quantidade;
+            this.Nome = nome;
+            this.Preco = preco;
+            this.Quantidade = quantidade;
         }
-
-        public Produto(string nome, double preco)
+        public Produto(string nome, double preco, int quantidade, int testeThisNoConstrutor) : this (nome, preco, quantidade)
         {
-            Nome = nome;
-            Preco = preco;
-            Quantidade = 5;
+            this.testeThisNoConstrutor = testeThisNoConstrutor;
         }
 
         public double ValorTotalEmEstoque()
         {
-            return Preco * Quantidade;
+            return this.Preco * this.Quantidade;
         }
 
         public void AdicionarProdutos(int quantidade)
         {
-            Quantidade += quantidade;
+            this.Quantidade += quantidade;
         }
 
         public void RemoverProdutos(int quantidade)
         {
-            Quantidade -= quantidade;
+            this.Quantidade -= quantidade;
         }
 
         public override string ToString()
         {
-            return Nome 
+            return this.Nome 
                 + ", Preço $ " 
-                + Preco.ToString("F2", CultureInfo.InvariantCulture) 
+                + this.Preco.ToString("F2", CultureInfo.InvariantCulture) 
                 + ", " 
-                + Quantidade 
+                + this.Quantidade 
                 + " Unidades, Total: $ " 
                 + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
