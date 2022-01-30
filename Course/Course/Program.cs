@@ -5,6 +5,7 @@ namespace Course
 {
     class Program
     {
+        static double Pi = 3.14;
         static void Main(string[] args)
         {
             #region Byte
@@ -673,20 +674,33 @@ namespace Course
             #endregion
 
             #region Exercicio 3
-            Aluno aluno = new Aluno();
-            Console.WriteLine("Informe os dados do aluno:");
-            Console.Write("Nome do aluno: ");
-            aluno.Nome = Console.ReadLine();
-            Console.Write("Primeira do aluno: ");
-            aluno.Nota1 = double.Parse(Console.ReadLine());
-            Console.Write("Segunda do aluno: ");
-            aluno.Nota2 = double.Parse(Console.ReadLine());
-            Console.Write("Terceira do aluno: ");
-            aluno.Nota3 = double.Parse(Console.ReadLine());
+            //Aluno aluno = new Aluno();
+            //Console.WriteLine("Informe os dados do aluno:");
+            //Console.Write("Nome do aluno: ");
+            //aluno.Nome = Console.ReadLine();
+            //Console.Write("Primeira do aluno: ");
+            //aluno.Nota1 = double.Parse(Console.ReadLine());
+            //Console.Write("Segunda do aluno: ");
+            //aluno.Nota2 = double.Parse(Console.ReadLine());
+            //Console.Write("Terceira do aluno: ");
+            //aluno.Nota3 = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Nota Final = {0}", aluno.NotaFinal().ToString("F2", CultureInfo.InvariantCulture));
-            aluno.VerificaAprovacao();
+            //Console.WriteLine("Nota Final = {0}", aluno.NotaFinal().ToString("F2", CultureInfo.InvariantCulture));
+            //aluno.VerificaAprovacao();
             #endregion
+            #endregion
+
+            #region 46. Membros estáticos - PARTE 1
+            Console.WriteLine("Informe os dados da circunferência:");
+            Console.Write("Entre o valor do raio: ");
+            double raio = double.Parse(Console.ReadLine().ToString(CultureInfo.InvariantCulture));
+
+            double circunferencia = Circunferencia(raio);
+            Console.WriteLine("Circunferência: {0}", circunferencia.ToString("F2", CultureInfo.InvariantCulture));
+
+            double volume = VolumeCircunferencia(raio);
+            Console.WriteLine("Volume da circunferência: {0}", volume.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine("Valor de Pi: {0}", Pi.ToString("F2", CultureInfo.InvariantCulture));
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
@@ -706,6 +720,20 @@ namespace Course
                 maior = n3;
             }
             return maior;
+        }
+        #endregion
+
+        #region Função para calcular o tamanho da circunferência pelo Raio fornecido
+        static double Circunferencia(double raio)
+        {
+            return 2.0 * Pi * raio;
+        }
+        #endregion
+
+        #region Função para calcular o Volume da Circunferência pelo Raio fornecido
+        static double VolumeCircunferencia(double raio)
+        {
+            return 4.0 / 3.0 * Pi * Math.Pow(raio, 3);
         }
         #endregion
     }
