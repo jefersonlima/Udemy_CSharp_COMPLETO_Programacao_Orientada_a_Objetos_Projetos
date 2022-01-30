@@ -762,14 +762,19 @@ namespace Course
             #endregion
 
             #region 52. Sobrecarga
-            Console.WriteLine("Entre os dados do Produto:");
-            Console.Write("Nome: ");
-            string nome = Console.ReadLine();
-            Console.Write("Preço: ");
-            double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            //Console.WriteLine("Entre os dados do Produto:");
+            //Console.Write("Nome: ");
+            //string nome = Console.ReadLine();
+            //Console.Write("Preço: ");
+            //double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            Produto p = new Produto(nome, preco);
-            Console.WriteLine("Dados do produto: " + p);
+            //Produto p = new Produto(nome, preco);
+            //Console.WriteLine("Dados do produto: " + p);
+            #endregion
+
+            #region 53. Sintaxe alternativa para inicializar valores
+            Produto p = new Produto { Nome = "TV", Preco = 900, Quantidade = 20 };
+            Console.WriteLine(p);
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
