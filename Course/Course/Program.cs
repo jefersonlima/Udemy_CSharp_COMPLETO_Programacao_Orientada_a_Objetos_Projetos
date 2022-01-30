@@ -717,12 +717,45 @@ namespace Course
             #endregion
 
             #region 48. Exercícios propostos (membros estáticos)
-            Console.Write("Qual a cotação do dólar? ");
-            double valorDolar = double.Parse(Console.ReadLine());
-            Console.Write("Quantos Dólares você vai comprar? ");
-            double quantidadeDolares = double.Parse(Console.ReadLine());
-            Console.Write("Valor a ser pago em Reais = {0}", ConversorDeMoeda.ConverteDolarParaReal(valorDolar, quantidadeDolares).ToString("F2", CultureInfo.InvariantCulture));
+            //Console.Write("Qual a cotação do dólar? ");
+            //double valorDolar = double.Parse(Console.ReadLine());
+            //Console.Write("Quantos Dólares você vai comprar? ");
+            //double quantidadeDolares = double.Parse(Console.ReadLine());
+            //Console.Write("Valor a ser pago em Reais = {0}", ConversorDeMoeda.ConverteDolarParaReal(valorDolar, quantidadeDolares).ToString("F2", CultureInfo.InvariantCulture));
+            #endregion
+
+            #region 51. Construtores
             
+            Console.WriteLine("Entre os dados do Produto:");
+            Console.Write("Nome: ");
+            string nome = Console.ReadLine();
+            Console.Write("Preço: ");
+            double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Quantidade no estoque: ");
+            int quantidade = int.Parse(Console.ReadLine());
+
+            Produto p = new Produto(nome, preco, quantidade);
+
+            Console.WriteLine();
+            Console.WriteLine("Dados do produto: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser adicionado: ");
+            int qte = int.Parse(Console.ReadLine());
+            p.AdicionarProdutos(qte);
+            Console.WriteLine("Dados Atualizados!");
+
+            Console.WriteLine();
+            Console.WriteLine("Dados do produto: " + p);
+
+            Console.WriteLine();
+            Console.Write("Digite o número de produtos a ser removidos: ");
+            qte = int.Parse(Console.ReadLine());
+            p.RemoverProdutos(qte);
+            Console.WriteLine("Dados Atualizados!");
+
+            Console.WriteLine();
+            Console.WriteLine("Dados do produto: " + p);
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
