@@ -704,17 +704,25 @@ namespace Course
             #endregion
 
             #region 47. Membros estáticos - PARTE 2
+            //Console.WriteLine("Informe os dados da circunferência:");
+            //Console.Write("Entre o valor do raio: ");
+            //double raio = double.Parse(Console.ReadLine().ToString(CultureInfo.InvariantCulture));
+
+            //double circunferencia = Calculadora.Circunferencia(raio);
+            //Console.WriteLine("Circunferência: {0}", circunferencia.ToString("F2", CultureInfo.InvariantCulture));
+
+            //double volume = Calculadora.VolumeCircunferencia(raio);
+            //Console.WriteLine("Volume da circunferência: {0}", volume.ToString("F2", CultureInfo.InvariantCulture));
+            //Console.WriteLine("Valor de Pi: {0}", Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture));
+            #endregion
+
+            #region 48. Exercícios propostos (membros estáticos)
+            Console.Write("Qual a cotação do dólar? ");
+            double valorDolar = double.Parse(Console.ReadLine());
+            Console.Write("Quantos Dólares você vai comprar? ");
+            double quantidadeDolares = double.Parse(Console.ReadLine());
+            Console.Write("Valor a ser pago em Reais = {0}", ConversorDeMoeda.ConverteDolarParaReal(valorDolar, quantidadeDolares).ToString("F2", CultureInfo.InvariantCulture));
             
-            Console.WriteLine("Informe os dados da circunferência:");
-            Console.Write("Entre o valor do raio: ");
-            double raio = double.Parse(Console.ReadLine().ToString(CultureInfo.InvariantCulture));
-
-            double circunferencia = Calculadora.Circunferencia(raio);
-            Console.WriteLine("Circunferência: {0}", circunferencia.ToString("F2", CultureInfo.InvariantCulture));
-
-            double volume = Calculadora.VolumeCircunferencia(raio);
-            Console.WriteLine("Volume da circunferência: {0}", volume.ToString("F2", CultureInfo.InvariantCulture));
-            Console.WriteLine("Valor de Pi: {0}", Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture));
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
