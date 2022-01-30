@@ -691,16 +691,30 @@ namespace Course
             #endregion
 
             #region 46. Membros estáticos - PARTE 1
+            //Console.WriteLine("Informe os dados da circunferência:");
+            //Console.Write("Entre o valor do raio: ");
+            //double raio = double.Parse(Console.ReadLine().ToString(CultureInfo.InvariantCulture));
+
+            //double circunferencia = Circunferencia(raio);
+            //Console.WriteLine("Circunferência: {0}", circunferencia.ToString("F2", CultureInfo.InvariantCulture));
+
+            //double volume = VolumeCircunferencia(raio);
+            //Console.WriteLine("Volume da circunferência: {0}", volume.ToString("F2", CultureInfo.InvariantCulture));
+            //Console.WriteLine("Valor de Pi: {0}", Pi.ToString("F2", CultureInfo.InvariantCulture));
+            #endregion
+
+            #region 47. Membros estáticos - PARTE 2
+            
             Console.WriteLine("Informe os dados da circunferência:");
             Console.Write("Entre o valor do raio: ");
             double raio = double.Parse(Console.ReadLine().ToString(CultureInfo.InvariantCulture));
 
-            double circunferencia = Circunferencia(raio);
+            double circunferencia = Calculadora.Circunferencia(raio);
             Console.WriteLine("Circunferência: {0}", circunferencia.ToString("F2", CultureInfo.InvariantCulture));
 
-            double volume = VolumeCircunferencia(raio);
+            double volume = Calculadora.VolumeCircunferencia(raio);
             Console.WriteLine("Volume da circunferência: {0}", volume.ToString("F2", CultureInfo.InvariantCulture));
-            Console.WriteLine("Valor de Pi: {0}", Pi.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine("Valor de Pi: {0}", Calculadora.Pi.ToString("F2", CultureInfo.InvariantCulture));
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
