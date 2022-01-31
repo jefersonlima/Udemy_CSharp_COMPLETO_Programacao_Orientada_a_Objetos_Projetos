@@ -792,20 +792,38 @@ namespace Course
             #endregion
 
             #region 55. Encapsulamento
+            //ProdutoEncapsulamento p = new ProdutoEncapsulamento("TV", 500, 10);
+
+            //Console.WriteLine(p.GetNome());
+
+            //p.SetNome("TV 4K");
+
+            //Console.WriteLine(p.GetNome());
+
+            //p.SetNome("T");
+
+            //Console.WriteLine(p.GetNome());
+
+            //Console.WriteLine(p.GetPreco());
+            //Console.WriteLine(p.GetQuantidade());
+            #endregion
+
+            #region 56. Properties   
             ProdutoEncapsulamento p = new ProdutoEncapsulamento("TV", 500, 10);
 
-            Console.WriteLine(p.GetNome());
+            Console.WriteLine(p.Nome);
 
-            p.SetNome("TV 4K");
+            p.Nome ="TV 4K";
 
-            Console.WriteLine(p.GetNome());
+            Console.WriteLine(p.Nome);
 
-            p.SetNome("T");
+            p.Nome = "T";
 
-            Console.WriteLine(p.GetNome());
+            Console.WriteLine(p.Nome);
 
-            Console.WriteLine(p.GetPreco());
-            Console.WriteLine(p.GetQuantidade());
+            Console.WriteLine(p.Preco);
+            Console.WriteLine(p.Quantidade);
+
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
