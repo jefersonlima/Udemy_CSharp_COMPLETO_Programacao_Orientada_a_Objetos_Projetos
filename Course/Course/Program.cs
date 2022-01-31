@@ -781,14 +781,31 @@ namespace Course
             #endregion
 
             #region 54. Palavra this
-            Produto p = new Produto
-            {
-                Nome = "TV",
-                Preco = 900,
-                Quantidade = 20,
-                testeThisNoConstrutor = 0
-            };
-            Console.WriteLine(p);
+            //Produto p = new Produto
+            //{
+            //    Nome = "TV",
+            //    Preco = 900,
+            //    Quantidade = 20,
+            //    testeThisNoConstrutor = 0
+            //};
+            //Console.WriteLine(p);
+            #endregion
+
+            #region 55. Encapsulamento
+            ProdutoEncapsulamento p = new ProdutoEncapsulamento("TV", 500, 10);
+
+            Console.WriteLine(p.GetNome());
+
+            p.SetNome("TV 4K");
+
+            Console.WriteLine(p.GetNome());
+
+            p.SetNome("T");
+
+            Console.WriteLine(p.GetNome());
+
+            Console.WriteLine(p.GetPreco());
+            Console.WriteLine(p.GetQuantidade());
             #endregion
         }
         #region Função para verificar qual o maior numero entre 3 digitados
