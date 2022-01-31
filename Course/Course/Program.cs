@@ -827,11 +827,16 @@ namespace Course
             #endregion
 
             #region 57. Auto Properties
-            ProdutoEncapsulamento p = new ProdutoEncapsulamento("TV", 500, 10);
+            //ProdutoEncapsulamento p = new ProdutoEncapsulamento("TV", 500, 10);
 
-            Console.WriteLine(p.Nome);
-            Console.WriteLine(p.Preco);
-            Console.WriteLine(p.Quantidade);
+            //Console.WriteLine(p.Nome);
+            //Console.WriteLine(p.Preco);
+            //Console.WriteLine(p.Quantidade);
+            #endregion
+
+            #region 58. Ordem sugerida para implementação de membros de classe
+            //classe gerada para modelo e organização das novas classes
+            //OrdemImplementacaoClasse
             #endregion
 
 
