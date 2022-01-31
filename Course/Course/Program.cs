@@ -839,6 +839,15 @@ namespace Course
             //OrdemImplementacaoClasse
             #endregion
 
+            #region 59. Modificadores de acesso
+            //public
+            //protected internal
+            //internal
+            //protected
+            //private protected
+            //private
+            #endregion
+
 
         }
         #region Função para verificar qual o maior numero entre 3 digitados
