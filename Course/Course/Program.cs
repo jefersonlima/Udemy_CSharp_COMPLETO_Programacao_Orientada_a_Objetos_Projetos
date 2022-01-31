@@ -809,22 +809,32 @@ namespace Course
             #endregion
 
             #region 56. Properties   
+            //ProdutoEncapsulamento p = new ProdutoEncapsulamento("TV", 500, 10);
+
+            //Console.WriteLine(p.Nome);
+
+            //p.Nome ="TV 4K";
+
+            //Console.WriteLine(p.Nome);
+
+            //p.Nome = "T";
+
+            //Console.WriteLine(p.Nome);
+
+            //Console.WriteLine(p.Preco);
+            //Console.WriteLine(p.Quantidade);
+
+            #endregion
+
+            #region 57. Auto Properties
             ProdutoEncapsulamento p = new ProdutoEncapsulamento("TV", 500, 10);
 
             Console.WriteLine(p.Nome);
-
-            p.Nome ="TV 4K";
-
-            Console.WriteLine(p.Nome);
-
-            p.Nome = "T";
-
-            Console.WriteLine(p.Nome);
-
             Console.WriteLine(p.Preco);
             Console.WriteLine(p.Quantidade);
-
             #endregion
+
+
         }
         #region Função para verificar qual o maior numero entre 3 digitados
         static int Maior(int n1, int n2, int n3)

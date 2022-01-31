@@ -11,26 +11,30 @@ namespace Course
         private string _nome;
         public double _preco;
         public int _quantidade;
+        #region Auto Properties
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
+        #endregion
         #endregion
 
         #region Construtores
         public ProdutoEncapsulamento()
         {
             this._nome = null;
-            this._preco = 0.0;
-            this._quantidade = 0;
+            this.Preco = 0.0;
+            this.Quantidade = 0;
         }
         public ProdutoEncapsulamento(string nome, double preco)
         {
             this._nome = nome;
-            this._preco = preco;
-            this._quantidade = 5;
+            this.Preco = preco;
+            this.Quantidade = 5;
         }
         public ProdutoEncapsulamento(string nome, double preco, int quantidade)
         {
             this._nome = nome;
-            this._preco = preco;
-            this._quantidade = quantidade;
+            this.Preco = preco;
+            this.Quantidade = quantidade;
         }
         #endregion
 
@@ -62,14 +66,6 @@ namespace Course
         #endregion
 
         #region Propiedades
-        public double Preco
-        {
-            get { return _preco; }
-        }
-        public int Quantidade
-        {
-            get { return _quantidade; }
-        }
         public string Nome
         {
             get { return _nome; }
@@ -90,26 +86,26 @@ namespace Course
         #region Metodos
         public double ValorTotalEmEstoque()
         {
-            return this._preco * this._quantidade;
+            return this.Preco * this.Quantidade;
         }
 
         public void AdicionarProdutos(int quantidade)
         {
-            this._quantidade += quantidade;
+            this.Quantidade += quantidade;
         }
 
         public void RemoverProdutos(int quantidade)
         {
-            this._quantidade -= quantidade;
+            this.Quantidade -= quantidade;
         }
 
         public override string ToString()
         {
             return this._nome
                 + ", Preço $ "
-                + this._preco.ToString("F2", CultureInfo.InvariantCulture)
+                + this.Preco.ToString("F2", CultureInfo.InvariantCulture)
                 + ", "
-                + this._quantidade
+                + this.Quantidade
                 + " Unidades, Total: $ "
                 + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
         }
