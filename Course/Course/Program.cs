@@ -849,37 +849,47 @@ namespace Course
             #endregion
 
             #region 60. Exercício de fixação
-            Console.Write("Entre o Número da conta: ");
-            int numeroConta = int.Parse(Console.ReadLine());
-            Console.Write("Entre o Nome do titular da conta: ");
-            string nomeTitular = Console.ReadLine();
-            Console.Write("Haverá deposito inicial (S/N)? ");
-            char opcao = char.Parse(Console.ReadLine());
-            ContaBancaria contaBancaria;
-            if (opcao == 'S' || opcao == 's')
-            {
-                Console.Write("Entre o valor de depósito inicial: ");
-                double saldo = double.Parse(Console.ReadLine());
-                contaBancaria = new ContaBancaria(numeroConta, nomeTitular, saldo);
-            }
-            else
-            {
-                contaBancaria = new ContaBancaria(numeroConta, nomeTitular);
-            }
-            Console.WriteLine();
-            Console.WriteLine(contaBancaria);
+            //Console.Write("Entre o Número da conta: ");
+            //int numeroConta = int.Parse(Console.ReadLine());
+            //Console.Write("Entre o Nome do titular da conta: ");
+            //string nomeTitular = Console.ReadLine();
+            //Console.Write("Haverá deposito inicial (S/N)? ");
+            //char opcao = char.Parse(Console.ReadLine());
+            //ContaBancaria contaBancaria;
+            //if (opcao == 'S' || opcao == 's')
+            //{
+            //    Console.Write("Entre o valor de depósito inicial: ");
+            //    double saldo = double.Parse(Console.ReadLine());
+            //    contaBancaria = new ContaBancaria(numeroConta, nomeTitular, saldo);
+            //}
+            //else
+            //{
+            //    contaBancaria = new ContaBancaria(numeroConta, nomeTitular);
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine(contaBancaria);
 
-            Console.WriteLine();
-            Console.Write("Entre com um valor para depósito: ");
-            contaBancaria.Deposito(double.Parse(Console.ReadLine()));
-            Console.WriteLine("Dados da conta atualizados:");
-            Console.WriteLine(contaBancaria);
+            //Console.WriteLine();
+            //Console.Write("Entre com um valor para depósito: ");
+            //contaBancaria.Deposito(double.Parse(Console.ReadLine()));
+            //Console.WriteLine("Dados da conta atualizados:");
+            //Console.WriteLine(contaBancaria);
 
-            Console.WriteLine();
-            Console.Write("Entre com um valor para saque: ");
-            contaBancaria.Saque(double.Parse(Console.ReadLine()));
-            Console.WriteLine("Dados da conta atualizados:");
-            Console.WriteLine(contaBancaria);
+            //Console.WriteLine();
+            //Console.Write("Entre com um valor para saque: ");
+            //contaBancaria.Saque(double.Parse(Console.ReadLine()));
+            //Console.WriteLine("Dados da conta atualizados:");
+            //Console.WriteLine(contaBancaria);
+            #endregion
+
+            #region 66. Tipos referência e tipos valor
+            Point p;
+            p.X = 10;
+            p.Y = 20;
+
+            Console.WriteLine(p);
+            p = new Point();
+            Console.WriteLine(p);
             #endregion
 
 
