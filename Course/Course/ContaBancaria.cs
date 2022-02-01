@@ -29,7 +29,7 @@ namespace Course
 
         public ContaBancaria(int numeroConta, string nomeTitular, double saldo) : this(numeroConta, nomeTitular)
         {
-            Saldo = saldo;
+            Deposito(saldo);
         }
         #endregion
 

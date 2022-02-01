@@ -852,7 +852,7 @@ namespace Course
             Console.Write("Entre o Número da conta: ");
             int numeroConta = int.Parse(Console.ReadLine());
             Console.Write("Entre o Nome do titular da conta: ");
-            string nometitular = Console.ReadLine();
+            string nomeTitular = Console.ReadLine();
             Console.Write("Haverá deposito inicial (S/N)? ");
             char opcao = char.Parse(Console.ReadLine());
             ContaBancaria contaBancaria;
@@ -860,11 +860,11 @@ namespace Course
             {
                 Console.Write("Entre o valor de depósito inicial: ");
                 double saldo = double.Parse(Console.ReadLine());
-                contaBancaria = new ContaBancaria(numeroConta, nometitular, saldo);
+                contaBancaria = new ContaBancaria(numeroConta, nomeTitular, saldo);
             }
             else
             {
-                contaBancaria = new ContaBancaria(numeroConta, nometitular);
+                contaBancaria = new ContaBancaria(numeroConta, nomeTitular);
             }
             Console.WriteLine();
             Console.WriteLine(contaBancaria);
