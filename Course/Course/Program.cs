@@ -930,13 +930,34 @@ namespace Course
             #endregion
 
             #region 69. Vetores - PARTE 1
-            int n = int.Parse(Console.ReadLine());
+            //int n = int.Parse(Console.ReadLine());
 
-            CalcularMediaDoubleArray(n);
+            //CalcularMediaDoubleArray(n);
 
             #endregion
 
+            #region 70. Vetores - PARTE 2
+            int n = int.Parse(Console.ReadLine());
 
+            Product[] products = new Product[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                string name = Console.ReadLine();
+                double price = double.Parse(Console.ReadLine());
+                products[i] = new Product(name, price);
+            }
+
+            double sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                sum += products[i].Price;
+            }
+
+            double avg = sum / n;
+
+            Console.WriteLine("AVERAGE PRICE = " + avg.ToString("F2", CultureInfo.InvariantCulture));
+            #endregion
         }
         #region Função para calcular a média de um array do tipo double
         static void CalcularMediaDoubleArray(int n)
