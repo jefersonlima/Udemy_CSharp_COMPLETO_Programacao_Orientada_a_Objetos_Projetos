@@ -893,47 +893,84 @@ namespace Course
             #endregion
 
             #region 68. Nullable
-            Nullable<double> x = null;
-            double? y = 10.0;
+            //Nullable<double> x = null;
+            //double? y = 10.0;
 
-            Console.WriteLine(x.GetValueOrDefault());
-            Console.WriteLine(y.GetValueOrDefault());
+            //Console.WriteLine(x.GetValueOrDefault());
+            //Console.WriteLine(y.GetValueOrDefault());
 
-            Console.WriteLine(x.HasValue);
-            Console.WriteLine(y.HasValue);
+            //Console.WriteLine(x.HasValue);
+            //Console.WriteLine(y.HasValue);
 
-            if (x.HasValue)
-            {
-                Console.WriteLine(x.Value);
-            }
-            else
-            {
-                Console.WriteLine("X is null");
-            }
+            //if (x.HasValue)
+            //{
+            //    Console.WriteLine(x.Value);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("X is null");
+            //}
 
-            if (y.HasValue)
-            {
-                Console.WriteLine(y.Value);
-            }
-            else
-            {
-                Console.WriteLine("Y is null");
-            }
+            //if (y.HasValue)
+            //{
+            //    Console.WriteLine(y.Value);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Y is null");
+            //}
 
-            #region Operador de coalescência "??"
-            double a = x ?? 5;
-            double b = y ?? 5;
+            //#region Operador de coalescência "??"
+            //double a = x ?? 5;
+            //double b = y ?? 5;
 
-            Console.WriteLine(a);
-            Console.WriteLine(b);
+            //Console.WriteLine(a);
+            //Console.WriteLine(b);
+            //#endregion
             #endregion
 
+            #region 69. Vetores - PARTE 1
+            int n = int.Parse(Console.ReadLine());
 
+            CalcularMediaDoubleArray(n);
 
             #endregion
 
 
         }
+        #region Função para calcular a média de um array do tipo double
+        static void CalcularMediaDoubleArray(int n)
+        {
+            double[] vect = new double[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                vect[i] = double.Parse(Console.ReadLine());
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(vect[i]);
+            }
+
+            foreach (var item in vect)
+            {
+                Console.WriteLine(item);
+            }
+
+            double sum = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                sum += vect[i];
+            }
+
+            double avg = sum / n;
+
+            Console.WriteLine("AVERAGE HEIGHT = " + avg.ToString("F2", CultureInfo.InvariantCulture));
+        }
+        #endregion
+
         #region Função para verificar qual o maior numero entre 3 digitados
         static int Maior(int n1, int n2, int n3)
         {
