@@ -1011,32 +1011,48 @@ namespace Course
             #endregion
 
             #region 72. Modificador de parâmetros params
-            #region Sobrecarga de metodos
-            Console.WriteLine("Sobrecarga de metodos");
-            int s1 = Calculator.Sum(2, 3);
-            int s2 = Calculator.Sum(2, 3, 4);
+            //#region Sobrecarga de metodos
+            //Console.WriteLine("Sobrecarga de metodos");
+            //int s1 = Calculator.Sum(2, 3);
+            //int s2 = Calculator.Sum(2, 3, 4);
 
-            Console.WriteLine(s1);
-            Console.WriteLine(s2);
+            //Console.WriteLine(s1);
+            //Console.WriteLine(s2);
+            //#endregion
+
+            //#region vetor
+            //Console.WriteLine("Vetor");
+            //int v1 = Calculator.SumVect(new int[] { 2, 3 });
+            //int v2 = Calculator.SumVect(new int[] { 2, 3, 4 });
+
+            //Console.WriteLine(v1);
+            //Console.WriteLine(v2);
+            //#endregion
+
+            //#region Vetor + Params 
+            //Console.WriteLine("Vetor + Params");
+            //int vp1 = Calculator.SumVectParams( 2, 3 );
+            //int vp2 = Calculator.SumVectParams( 2, 3, 4 );
+
+            //Console.WriteLine(vp1);
+            //Console.WriteLine(vp2);
+            //#endregion
             #endregion
 
-            #region vetor
-            Console.WriteLine("Vetor");
-            int v1 = Calculator.SumVect(new int[] { 2, 3 });
-            int v2 = Calculator.SumVect(new int[] { 2, 3, 4 });
-
-            Console.WriteLine(v1);
-            Console.WriteLine(v2);
+            #region 73. Modificadores de parâmetros ref e out
+            #region Ref
+            int a = 10;
+            Calculator.Triple(ref a);
+            Console.WriteLine(a);
             #endregion
 
-            #region Vetor + Params 
-            Console.WriteLine("Vetor + Params");
-            int vp1 = Calculator.SumVectParams( 2, 3 );
-            int vp2 = Calculator.SumVectParams( 2, 3, 4 );
-
-            Console.WriteLine(vp1);
-            Console.WriteLine(vp2);
+            #region Out
+            int b = 10;
+            int triple;
+            Calculator.Triple(b, out triple);
+            Console.WriteLine(triple);
             #endregion
+
             #endregion
 
         }
