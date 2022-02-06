@@ -937,26 +937,77 @@ namespace Course
             #endregion
 
             #region 70. Vetores - PARTE 2
-            int n = int.Parse(Console.ReadLine());
+            //int n = int.Parse(Console.ReadLine());
 
-            Product[] products = new Product[n];
+            //Product[] products = new Product[n];
 
-            for (int i = 0; i < n; i++)
+            //for (int i = 0; i < n; i++)
+            //{
+            //    string name = Console.ReadLine();
+            //    double price = double.Parse(Console.ReadLine());
+            //    products[i] = new Product(name, price);
+            //}
+
+            //double sum = 0;
+            //for (int i = 0; i < n; i++)
+            //{
+            //    sum += products[i].Price;
+            //}
+
+            //double avg = sum / n;
+
+            //Console.WriteLine("AVERAGE PRICE = " + avg.ToString("F2", CultureInfo.InvariantCulture));
+            #endregion
+
+            #region 71. Exercício de fixação (vetores)
+
+            Console.Write("How many rooms will be rented? ");
+            int quantidadelocacao = int.Parse(Console.ReadLine());
+            
+            int quantidadeQuartos = 10;
+            Quarto[] vect = new Quarto[quantidadeQuartos];
+
+            for (int i = 0; i < quantidadelocacao; i++)
             {
+                Console.WriteLine("Rent #{0}", i + 1);
+                Console.Write("Name: ");
                 string name = Console.ReadLine();
-                double price = double.Parse(Console.ReadLine());
-                products[i] = new Product(name, price);
-            }
+                Console.Write("Email: ");
+                string email = Console.ReadLine();
+                Console.Write("Room: ");
+                int room = int.Parse(Console.ReadLine());
 
-            double sum = 0;
-            for (int i = 0; i < n; i++)
+                for (int j = 0; j < quantidadeQuartos; j++)
+                    if (j == (room - 1))
+                    {
+                        vect[j] = new Quarto(name, email, room);
+                    }
+                Console.WriteLine();
+
+            }
+            Console.WriteLine("All rooms");
+            for (int i = 0; i < quantidadeQuartos; i++)
             {
-                sum += products[i].Price;
+                if (vect[i] != null)
+                {
+                    Console.WriteLine(vect[i].ToString());
+                }
+                else
+                {
+                    Console.WriteLine(i+1 + ": Quarto Disponivel");
+                }
+                
             }
 
-            double avg = sum / n;
-
-            Console.WriteLine("AVERAGE PRICE = " + avg.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine();
+            Console.WriteLine("Busy rooms");
+            for (int i = 0; i < quantidadeQuartos; i++)
+            {
+                if (vect[i] != null)
+                {
+                    Console.WriteLine(vect[i].ToString());
+                }
+            }
             #endregion
         }
         #region Função para calcular a média de um array do tipo double
