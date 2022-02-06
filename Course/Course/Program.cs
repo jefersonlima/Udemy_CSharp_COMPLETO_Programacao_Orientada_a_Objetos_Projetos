@@ -961,54 +961,84 @@ namespace Course
 
             #region 71. Exercício de fixação (vetores)
 
-            Console.Write("How many rooms will be rented? ");
-            int quantidadelocacao = int.Parse(Console.ReadLine());
-            
-            int quantidadeQuartos = 10;
-            Quarto[] vect = new Quarto[quantidadeQuartos];
+            //Console.Write("How many rooms will be rented? ");
+            //int quantidadelocacao = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < quantidadelocacao; i++)
-            {
-                Console.WriteLine("Rent #{0}", i + 1);
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-                Console.Write("Email: ");
-                string email = Console.ReadLine();
-                Console.Write("Room: ");
-                int room = int.Parse(Console.ReadLine());
+            //int quantidadeQuartos = 10;
+            //Quarto[] vect = new Quarto[quantidadeQuartos];
 
-                for (int j = 0; j < quantidadeQuartos; j++)
-                    if (j == (room - 1))
-                    {
-                        vect[j] = new Quarto(name, email, room);
-                    }
-                Console.WriteLine();
+            //for (int i = 0; i < quantidadelocacao; i++)
+            //{
+            //    Console.WriteLine("Rent #{0}", i + 1);
+            //    Console.Write("Name: ");
+            //    string name = Console.ReadLine();
+            //    Console.Write("Email: ");
+            //    string email = Console.ReadLine();
+            //    Console.Write("Room: ");
+            //    int room = int.Parse(Console.ReadLine());
 
-            }
-            Console.WriteLine("All rooms");
-            for (int i = 0; i < quantidadeQuartos; i++)
-            {
-                if (vect[i] != null)
-                {
-                    Console.WriteLine(vect[i].ToString());
-                }
-                else
-                {
-                    Console.WriteLine(i+1 + ": Quarto Disponivel");
-                }
-                
-            }
+            //    for (int j = 0; j < quantidadeQuartos; j++)
+            //        if (j == (room - 1))
+            //        {
+            //            vect[j] = new Quarto(name, email, room);
+            //        }
+            //    Console.WriteLine();
 
-            Console.WriteLine();
-            Console.WriteLine("Busy rooms");
-            for (int i = 0; i < quantidadeQuartos; i++)
-            {
-                if (vect[i] != null)
-                {
-                    Console.WriteLine(vect[i].ToString());
-                }
-            }
+            //}
+            //Console.WriteLine("All rooms");
+            //for (int i = 0; i < quantidadeQuartos; i++)
+            //{
+            //    if (vect[i] != null)
+            //    {
+            //        Console.WriteLine(vect[i].ToString());
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine(i+1 + ": Quarto Disponivel");
+            //    }
+
+            //}
+
+            //Console.WriteLine();
+            //Console.WriteLine("Busy rooms");
+            //for (int i = 0; i < quantidadeQuartos; i++)
+            //{
+            //    if (vect[i] != null)
+            //    {
+            //        Console.WriteLine(vect[i].ToString());
+            //    }
+            //}
             #endregion
+
+            #region 72. Modificador de parâmetros params
+            #region Sobrecarga de metodos
+            Console.WriteLine("Sobrecarga de metodos");
+            int s1 = Calculator.Sum(2, 3);
+            int s2 = Calculator.Sum(2, 3, 4);
+
+            Console.WriteLine(s1);
+            Console.WriteLine(s2);
+            #endregion
+
+            #region vetor
+            Console.WriteLine("Vetor");
+            int v1 = Calculator.SumVect(new int[] { 2, 3 });
+            int v2 = Calculator.SumVect(new int[] { 2, 3, 4 });
+
+            Console.WriteLine(v1);
+            Console.WriteLine(v2);
+            #endregion
+
+            #region Vetor + Params 
+            Console.WriteLine("Vetor + Params");
+            int vp1 = Calculator.SumVectParams( 2, 3 );
+            int vp2 = Calculator.SumVectParams( 2, 3, 4 );
+
+            Console.WriteLine(vp1);
+            Console.WriteLine(vp2);
+            #endregion
+            #endregion
+
         }
         #region Função para calcular a média de um array do tipo double
         static void CalcularMediaDoubleArray(int n)
