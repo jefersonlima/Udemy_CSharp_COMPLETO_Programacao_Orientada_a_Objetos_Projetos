@@ -1040,19 +1040,31 @@ namespace Course
             #endregion
 
             #region 73. Modificadores de parâmetros ref e out
-            #region Ref
-            int a = 10;
-            Calculator.Triple(ref a);
-            Console.WriteLine(a);
+            //#region Ref
+            //int a = 10;
+            //Calculator.Triple(ref a);
+            //Console.WriteLine(a);
+            //#endregion
+
+            //#region Out
+            //int b = 10;
+            //int triple;
+            //Calculator.Triple(b, out triple);
+            //Console.WriteLine(triple);
+            //#endregion
+
             #endregion
 
-            #region Out
-            int b = 10;
-            int triple;
-            Calculator.Triple(b, out triple);
-            Console.WriteLine(triple);
+            #region 74. Boxing e unboxing
+            int x = 20;
+            int y;
+            #region Boxing
+            Object obj = x;
             #endregion
 
+            #region Unboxing
+            y = (int)obj;
+            #endregion
             #endregion
 
         }
