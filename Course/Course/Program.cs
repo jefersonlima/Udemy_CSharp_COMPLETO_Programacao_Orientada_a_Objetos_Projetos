@@ -1056,15 +1056,35 @@ namespace Course
             #endregion
 
             #region 74. Boxing e unboxing
-            int x = 20;
-            int y;
-            #region Boxing
-            Object obj = x;
+            //int x = 20;
+            //int y;
+            //#region Boxing
+            //Object obj = x;
+            //#endregion
+
+            //#region Unboxing
+            //y = (int)obj;
+            //#endregion
             #endregion
 
-            #region Unboxing
-            y = (int)obj;
-            #endregion
+            #region 75. Sintaxe opcional: laço foreach
+
+            string[] vect = new string[] { "Maria", "Alex", "Bob" };
+
+            Console.WriteLine("####For#####");
+            for (int i = 0; i < vect.Length; i++)
+            {
+                Console.WriteLine(vect[i]);
+            }
+
+            Console.WriteLine("##Foreach##");
+            foreach (var item in vect)
+            {
+                Console.WriteLine(item);
+            }
+
+
+
             #endregion
 
         }
