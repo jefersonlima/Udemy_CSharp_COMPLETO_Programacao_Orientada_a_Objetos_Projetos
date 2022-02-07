@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace Course
@@ -1069,20 +1070,25 @@ namespace Course
 
             #region 75. Sintaxe opcional: laço foreach
 
-            string[] vect = new string[] { "Maria", "Alex", "Bob" };
+            //string[] vect = new string[] { "Maria", "Alex", "Bob" };
 
-            Console.WriteLine("####For#####");
-            for (int i = 0; i < vect.Length; i++)
-            {
-                Console.WriteLine(vect[i]);
-            }
+            //Console.WriteLine("####For####");
+            //for (int i = 0; i < vect.Length; i++)
+            //{
+            //    Console.WriteLine(vect[i]);
+            //}
 
-            Console.WriteLine("##Foreach##");
-            foreach (var item in vect)
-            {
-                Console.WriteLine(item);
-            }
+            //Console.WriteLine("##Foreach##");
+            //foreach (var item in vect)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
 
+            #region 76. Listas (List) - PARTE 1
+            List<string> list = new List<string>();
+
+            List<string> list2 = new List<string> { "Maria", "Alex" };
 
 
             #endregion
