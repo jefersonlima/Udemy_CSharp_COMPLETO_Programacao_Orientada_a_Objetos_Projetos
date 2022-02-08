@@ -1086,10 +1086,79 @@ namespace Course
             #endregion
 
             #region 76. Listas (List) - PARTE 1
+            //List<string> list = new List<string>();
+
+            //List<string> list2 = new List<string> { "Maria", "Alex" };
+
+            #endregion
+
+            #region 77. Listas (List) - PARTE 2
             List<string> list = new List<string>();
 
-            List<string> list2 = new List<string> { "Maria", "Alex" };
+            list.Add("Maria");
+            list.Add("Alex");
+            list.Add("Bob");
+            list.Add("Anna");
 
+            list.Insert(2, "Marco");
+
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("List Count: {0}", list.Count);
+
+            string s1 = list.Find(x => x[0] == 'A');
+            Console.WriteLine("First 'A': {0}", s1);
+
+            string s2 = list.FindLast(x => x[0] == 'A');
+            Console.WriteLine("Last 'A': {0}", s2);
+
+            int pos1 = list.FindIndex(x => x[0] == 'A');
+            Console.WriteLine("First position 'A': {0}", pos1);
+
+            int pos2 = list.FindLastIndex(x => x[0] == 'A');
+            Console.WriteLine("Last position 'A': {0}", pos2);
+
+            Console.WriteLine("Lista com nomes da primeira lista com 5 caracteres");
+            List<string> list2 = list.FindAll(x => x.Length == 5);
+            foreach (var item in list2)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Removendo Alex da lista");
+            list.Remove("Alex");
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Removendo todos da lista que começam com 'M'");
+            list.RemoveAll(x => x[0] == 'M');
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("Removendo pela posição");
+            list.RemoveAt(0);
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+            list.Add("Maria");
+            list.Add("Alex");
+            list.Add("Bob");
+            list.Add("Marco");
+            Console.WriteLine("Removendo um Range");
+            list.RemoveRange(2, 2);
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
 
             #endregion
 
