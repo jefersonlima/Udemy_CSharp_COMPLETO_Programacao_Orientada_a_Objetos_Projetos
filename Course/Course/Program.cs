@@ -1206,16 +1206,64 @@ namespace Course
             #endregion
 
             #region 79. Matrizes
-            double[,] mat = new double[2, 3];
+            //double[,] mat = new double[2, 3];
 
-            Console.WriteLine(mat.Length); //quantidade de elementos da Matriz
+            //Console.WriteLine(mat.Length); //quantidade de elementos da Matriz
 
-            Console.WriteLine(mat.Rank); //quantidade linhas
+            //Console.WriteLine(mat.Rank); //quantidade linhas
 
-            Console.WriteLine(mat.GetLength(0)); //1º dimensão = linhas
+            //Console.WriteLine(mat.GetLength(0)); //1º dimensão = linhas
 
-            Console.WriteLine(mat.GetLength(1)); //2º dimensão =Colunas
+            //Console.WriteLine(mat.GetLength(1)); //2º dimensão =Colunas
 
+            #endregion
+
+            #region 80. Exercício resolvido (matrizes)
+            Console.Write("Informe o tamanho da Matriz: ");
+            int n = int.Parse(Console.ReadLine());
+            int[,] mat = new int[n, n];
+
+            List<int> diagonal = new List<int>();
+            List<int> negativos = new List<int>();
+
+            for (int i = 0; i < n; i++)
+            {
+                string[] values = Console.ReadLine().Split(' ');
+
+                for (int j = 0; j < n; j++)
+                {   
+                    mat[i, j] = int.Parse(values[j]);
+                }
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (i == j)
+                    {
+                        diagonal.Add(mat[i, j]);
+                    }
+
+                    if (mat[i, j] < 0)
+                    {
+                        negativos.Add(mat[i, j]);
+                    }
+                }
+            }
+
+            Console.WriteLine("Main diagonal");
+            foreach (var item in diagonal)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Negatives number: " + negativos.Count);
+            Console.Write("Are: ");
+            foreach (var item in negativos)
+            {
+                Console.Write( item + " ");
+            }
             #endregion
 
         }
