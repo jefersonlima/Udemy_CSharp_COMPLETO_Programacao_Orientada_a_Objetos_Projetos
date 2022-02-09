@@ -1163,46 +1163,59 @@ namespace Course
             #endregion
 
             #region 78. Exercício de fixação (listas)
-            Console.Write("How many employees will be resgistered? ");
-            int quantityEmployees = int.Parse(Console.ReadLine());
-            List<Employee> employees = new List<Employee>();
-            for (int i = 0; i < quantityEmployees; i++)
-            {
-                Console.WriteLine("Employee #{0}", i+1);
-                Console.Write("Id: ");
-                int id = int.Parse(Console.ReadLine());
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-                Console.Write("Salary: ");
-                double salary = double.Parse(Console.ReadLine());
+            //Console.Write("How many employees will be resgistered? ");
+            //int quantityEmployees = int.Parse(Console.ReadLine());
+            //List<Employee> employees = new List<Employee>();
+            //for (int i = 0; i < quantityEmployees; i++)
+            //{
+            //    Console.WriteLine("Employee #{0}", i+1);
+            //    Console.Write("Id: ");
+            //    int id = int.Parse(Console.ReadLine());
+            //    Console.Write("Name: ");
+            //    string name = Console.ReadLine();
+            //    Console.Write("Salary: ");
+            //    double salary = double.Parse(Console.ReadLine());
 
-                employees.Add( new Employee(id, name, salary));
-                Console.WriteLine();
-            }
+            //    employees.Add( new Employee(id, name, salary));
+            //    Console.WriteLine();
+            //}
 
-            Console.Write("Enter the employee id that will have salary increase: ");
-            int idConsulta = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the employee id that will have salary increase: ");
+            //int idConsulta = int.Parse(Console.ReadLine());
 
-            bool FindId = false;
-            foreach (var item in employees)
-            {    
-                if (item.Id == idConsulta)
-                {
-                    Console.Write("Enter the percentage: ");
-                    double percentage = double.Parse(Console.ReadLine());
-                    item.SalaryIncrease(percentage);
-                    FindId = true;
-                }      
-            }
-            if (FindId == false)
-            {
-                Console.WriteLine("Employee not find");
-            }
+            //bool FindId = false;
+            //foreach (var item in employees)
+            //{    
+            //    if (item.Id == idConsulta)
+            //    {
+            //        Console.Write("Enter the percentage: ");
+            //        double percentage = double.Parse(Console.ReadLine());
+            //        item.SalaryIncrease(percentage);
+            //        FindId = true;
+            //    }      
+            //}
+            //if (FindId == false)
+            //{
+            //    Console.WriteLine("Employee not find");
+            //}
 
-            foreach (var item in employees)
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in employees)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region 79. Matrizes
+            double[,] mat = new double[2, 3];
+
+            Console.WriteLine(mat.Length); //quantidade de elementos da Matriz
+
+            Console.WriteLine(mat.Rank); //quantidade linhas
+
+            Console.WriteLine(mat.GetLength(0)); //1º dimensão = linhas
+
+            Console.WriteLine(mat.GetLength(1)); //2º dimensão =Colunas
+
             #endregion
 
         }
