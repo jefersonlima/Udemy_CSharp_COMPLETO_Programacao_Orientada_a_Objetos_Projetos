@@ -1219,51 +1219,115 @@ namespace Course
             #endregion
 
             #region 80. Exercício resolvido (matrizes)
-            Console.Write("Informe o tamanho da Matriz: ");
+            //Console.Write("Informe o tamanho da Matriz: ");
+            //int n = int.Parse(Console.ReadLine());
+            //int[,] mat = new int[n, n];
+
+            //List<int> diagonal = new List<int>();
+            //List<int> negativos = new List<int>();
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    string[] values = Console.ReadLine().Split(' ');
+
+            //    for (int j = 0; j < n; j++)
+            //    {   
+            //        mat[i, j] = int.Parse(values[j]);
+            //    }
+            //}
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    for (int j = 0; j < n; j++)
+            //    {
+            //        if (i == j)
+            //        {
+            //            diagonal.Add(mat[i, j]);
+            //        }
+
+            //        if (mat[i, j] < 0)
+            //        {
+            //            negativos.Add(mat[i, j]);
+            //        }
+            //    }
+            //}
+
+            //Console.WriteLine("Main diagonal");
+            //foreach (var item in diagonal)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine("Negatives number: " + negativos.Count);
+            //Console.Write("Are: ");
+            //foreach (var item in negativos)
+            //{
+            //    Console.Write( item + " ");
+            //}
+            //Console.WriteLine();
+            #endregion
+
+            #region 81. Exercício de fixação (matrizes)
+            Console.Write("Informe o numero de linhas da Matriz: ");
+            int m = int.Parse(Console.ReadLine());
+            Console.Write("Informe o numero de Colunas da Matriz: ");
             int n = int.Parse(Console.ReadLine());
-            int[,] mat = new int[n, n];
 
-            List<int> diagonal = new List<int>();
-            List<int> negativos = new List<int>();
+            int[,] mat = new int[m, n];
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < m; i++)
             {
                 string[] values = Console.ReadLine().Split(' ');
-
                 for (int j = 0; j < n; j++)
-                {   
+                {
+                    //mat[i, j] = int.Parse(Console.ReadLine());
                     mat[i, j] = int.Parse(values[j]);
                 }
             }
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < m; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    if (i == j)
-                    {
-                        diagonal.Add(mat[i, j]);
-                    }
+                    Console.Write(mat[i, j] + " "); 
+                }
+                Console.WriteLine();
+            }
 
-                    if (mat[i, j] < 0)
+            Console.Write("Informe um valor para ser encontrado na Matriz: ");
+            int x = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (mat[i, j] == x)
                     {
-                        negativos.Add(mat[i, j]);
-                    }
+                        Console.WriteLine("{0} encontrado! na posição [{1},{2}]",x, i, j);
+
+                        if(i > 0)
+                        {
+                            Console.WriteLine("numero acima de {0} é: {1}", x, mat[i-1, j]);
+                        }
+
+                        if(j > 0)
+                        {
+                            Console.WriteLine("numero a esquerda de {0} é: {1}", x, mat[i, j -1]);
+                        }
+
+                        if (j < m)
+                        {
+                            Console.WriteLine("numero a Direita de {0} é: {1}", x, mat[i, j + 1]);
+                        }
+
+                        if (i < n)
+                        {
+                            Console.WriteLine("numero abaixo de {0} é: {1}", x, mat[i + 1, j]);
+                        }
+                    }   
                 }
             }
 
-            Console.WriteLine("Main diagonal");
-            foreach (var item in diagonal)
-            {
-                Console.Write(item + " ");
-            }
-            Console.WriteLine();
-            Console.WriteLine("Negatives number: " + negativos.Count);
-            Console.Write("Are: ");
-            foreach (var item in negativos)
-            {
-                Console.Write( item + " ");
-            }
             #endregion
 
         }
