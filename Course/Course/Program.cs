@@ -1268,66 +1268,78 @@ namespace Course
             #endregion
 
             #region 81. Exercício de fixação (matrizes)
-            Console.Write("Informe o numero de linhas da Matriz: ");
-            int m = int.Parse(Console.ReadLine());
-            Console.Write("Informe o numero de Colunas da Matriz: ");
-            int n = int.Parse(Console.ReadLine());
+            //Console.Write("Informe o numero de linhas da Matriz: ");
+            //int m = int.Parse(Console.ReadLine());
+            //Console.Write("Informe o numero de Colunas da Matriz: ");
+            //int n = int.Parse(Console.ReadLine());
 
-            int[,] mat = new int[m, n];
+            //int[,] mat = new int[m, n];
 
-            for (int i = 0; i < m; i++)
-            {
-                string[] values = Console.ReadLine().Split(' ');
-                for (int j = 0; j < n; j++)
-                {
-                    //mat[i, j] = int.Parse(Console.ReadLine());
-                    mat[i, j] = int.Parse(values[j]);
-                }
-            }
+            //for (int i = 0; i < m; i++)
+            //{
+            //    string[] values = Console.ReadLine().Split(' ');
+            //    for (int j = 0; j < n; j++)
+            //    {
+            //        //mat[i, j] = int.Parse(Console.ReadLine());
+            //        mat[i, j] = int.Parse(values[j]);
+            //    }
+            //}
 
-            for (int i = 0; i < m; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    Console.Write(mat[i, j] + " "); 
-                }
-                Console.WriteLine();
-            }
+            //for (int i = 0; i < m; i++)
+            //{
+            //    for (int j = 0; j < n; j++)
+            //    {
+            //        Console.Write(mat[i, j] + " "); 
+            //    }
+            //    Console.WriteLine();
+            //}
 
-            Console.Write("Informe um valor para ser encontrado na Matriz: ");
-            int x = int.Parse(Console.ReadLine());
+            //Console.Write("Informe um valor para ser encontrado na Matriz: ");
+            //int x = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < m; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    if (mat[i, j] == x)
-                    {
-                        Console.WriteLine("{0} encontrado! na posição [{1},{2}]",x, i, j);
+            //for (int i = 0; i < m; i++)
+            //{
+            //    for (int j = 0; j < n; j++)
+            //    {
+            //        if (mat[i, j] == x)
+            //        {
+            //            Console.WriteLine("{0} encontrado! na posição [{1},{2}]",x, i, j);
 
-                        if(i > 0)
-                        {
-                            Console.WriteLine("numero acima de {0} é: {1}", x, mat[i-1, j]);
-                        }
+            //            if(i > 0)
+            //            {
+            //                Console.WriteLine("numero acima de {0} é: {1}", x, mat[i-1, j]);
+            //            }
 
-                        if(j > 0)
-                        {
-                            Console.WriteLine("numero a esquerda de {0} é: {1}", x, mat[i, j -1]);
-                        }
+            //            if(j > 0)
+            //            {
+            //                Console.WriteLine("numero a esquerda de {0} é: {1}", x, mat[i, j -1]);
+            //            }
 
-                        if (j < m)
-                        {
-                            Console.WriteLine("numero a Direita de {0} é: {1}", x, mat[i, j + 1]);
-                        }
+            //            if (j < m)
+            //            {
+            //                Console.WriteLine("numero a Direita de {0} é: {1}", x, mat[i, j + 1]);
+            //            }
 
-                        if (i < n)
-                        {
-                            Console.WriteLine("numero abaixo de {0} é: {1}", x, mat[i + 1, j]);
-                        }
-                    }   
-                }
-            }
+            //            if (i < n)
+            //            {
+            //                Console.WriteLine("numero abaixo de {0} é: {1}", x, mat[i + 1, j]);
+            //            }
+            //        }   
+            //    }
+            //}
 
+            #endregion
+
+            #region 85. Inferência de tipos: palavra var
+            var x = 10;
+            var y = 20.0;
+            var z = "Marcia";
+
+            Console.WriteLine(x);
+            Console.WriteLine(y);
+            Console.WriteLine(z);
+
+            //sempre que possivel definit o tipo da variavel como int, double string etc evitando falhas no condigo com o var
             #endregion
 
         }
