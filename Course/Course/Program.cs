@@ -1450,33 +1450,70 @@ namespace Course
             #endregion
 
             #region 88. Funções interessantes para string
-            string original = "abcde FGHIJ ABC abc DEFG     ";
+            //string original = "abcde FGHIJ ABC abc DEFG     ";
 
-            //string s1 = original.ToUpper();
-            //string s2 = original.ToLower();
-            //string s3 = original.Trim();
-            //int n1 = original.IndexOF("bc");
-            //int n2 = original.LastIndexOF("bc");
-            //string s4 = original.Substring(3);
-            //string s5 = original.Substring(3, 5);
-            //string s6 = original.Replace('a', 'x');
-            //string s7 = original.Replace('abc', 'xy');
-            //bool b1 = String.IsNullOrEmpty(original);
-            //bool b2 = String.IsNullOrWhiteSpace(original);
-            Console.WriteLine("original             : -{0}-", original);
-            Console.WriteLine("ToUpper              : -{0}-", original.ToUpper());
-            Console.WriteLine("ToLower              : -{0}-", original.ToLower());
-            Console.WriteLine("ToTrim               : -{0}-", original.Trim());
-            Console.WriteLine("IndexOf('bc')        : -{0}-", original.IndexOf("bc"));
-            Console.WriteLine("LastIndexOf('bc')    : -{0}-", original.LastIndexOf("bc"));
-            Console.WriteLine("Substring(3)         : -{0}-", original.Substring(3));
-            Console.WriteLine("Substring(3, 5)      : -{0}-", original.Substring(3, 5));
-            Console.WriteLine("Replace('a', 'x')    : -{0}-", original.Replace('a', 'x'));
-            Console.WriteLine("Replace('abc', 'xy') : -{0}-", original.Replace("abc", "xy"));
-            Console.WriteLine("IsNullOrEmpty        : -{0}-", String.IsNullOrEmpty(original));
-            Console.WriteLine("IsNullOrWhiteSpace   : -{0}-", String.IsNullOrWhiteSpace(original));
+            ////string s1 = original.ToUpper();
+            ////string s2 = original.ToLower();
+            ////string s3 = original.Trim();
+            ////int n1 = original.IndexOF("bc");
+            ////int n2 = original.LastIndexOF("bc");
+            ////string s4 = original.Substring(3);
+            ////string s5 = original.Substring(3, 5);
+            ////string s6 = original.Replace('a', 'x');
+            ////string s7 = original.Replace('abc', 'xy');
+            ////bool b1 = String.IsNullOrEmpty(original);
+            ////bool b2 = String.IsNullOrWhiteSpace(original);
+            //Console.WriteLine("original             : -{0}-", original);
+            //Console.WriteLine("ToUpper              : -{0}-", original.ToUpper());
+            //Console.WriteLine("ToLower              : -{0}-", original.ToLower());
+            //Console.WriteLine("ToTrim               : -{0}-", original.Trim());
+            //Console.WriteLine("IndexOf('bc')        : -{0}-", original.IndexOf("bc"));
+            //Console.WriteLine("LastIndexOf('bc')    : -{0}-", original.LastIndexOf("bc"));
+            //Console.WriteLine("Substring(3)         : -{0}-", original.Substring(3));
+            //Console.WriteLine("Substring(3, 5)      : -{0}-", original.Substring(3, 5));
+            //Console.WriteLine("Replace('a', 'x')    : -{0}-", original.Replace('a', 'x'));
+            //Console.WriteLine("Replace('abc', 'xy') : -{0}-", original.Replace("abc", "xy"));
+            //Console.WriteLine("IsNullOrEmpty        : -{0}-", String.IsNullOrEmpty(original));
+            //Console.WriteLine("IsNullOrWhiteSpace   : -{0}-", String.IsNullOrWhiteSpace(original));
 
+            #endregion
 
+            #region 89. DateTime - representando data e hora
+            DateTime d1 = DateTime.Now;
+
+            Console.WriteLine(d1);
+            Console.WriteLine(d1.Ticks);
+
+            DateTime d2 = new DateTime(2018, 11, 25);
+            Console.WriteLine(d2);
+            d2 = new DateTime(2018, 11, 25, 20, 45, 3);
+            Console.WriteLine(d2);
+            d2 = new DateTime(2018, 11, 25, 20, 45, 3, 500);
+            Console.WriteLine(d2);
+
+            d2 = DateTime.Now;
+            Console.WriteLine(d2);
+
+            d2 = DateTime.Today;
+            Console.WriteLine(d2);
+
+            d2 = DateTime.UtcNow;
+            Console.WriteLine(d2);
+
+            d2 = DateTime.Parse("2000-08-15");
+            Console.WriteLine(d2);
+            d2 = DateTime.Parse("2000-08-15 13:05:58");
+            Console.WriteLine(d2);
+            d2 = DateTime.Parse("15/08/2000");
+            Console.WriteLine(d2);
+            d2 = DateTime.Parse("15/08/2000 13:05:58");
+            Console.WriteLine(d2);
+
+            d2 = DateTime.ParseExact("2000-08-15", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            Console.WriteLine(d2);
+
+            d2 = DateTime.ParseExact("15/08/2000 13:05:58", "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+            Console.WriteLine(d2);
 
             #endregion
         }
