@@ -1343,90 +1343,110 @@ namespace Course
             #endregion
 
             #region 86. Sintaxe alternativa - switch-case
-            Console.Write("Digite o dia da semana(1~7):  ");
-            int dayNumber = int.Parse(Console.ReadLine());
-            String dayName = null;
+            //Console.Write("Digite o dia da semana(1~7):  ");
+            //int dayNumber = int.Parse(Console.ReadLine());
+            //String dayName = null;
+
+            //#region Usando IF
+            //if (dayNumber == 1)
+            //{
+            //    dayName = "Sunday";
+            //}
+            //else if (dayNumber == 2)
+            //{
+            //    dayName = "Monday";
+            //}
+            //else if (dayNumber == 3)
+            //{
+            //    dayName = "Tuesday";
+            //}
+            //else if (dayNumber == 4)
+            //{
+            //    dayName = "Wednesday";
+            //}
+            //else if (dayNumber == 5)
+            //{
+            //    dayName = "Thursday";
+            //}
+            //else if (dayNumber == 6)
+            //{
+            //    dayName = "Friday";
+            //}
+            //else if (dayNumber == 7)
+            //{
+            //    dayName = "Saturday";
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Invalid value");
+            //}
+            //if (dayName != null)
+            //{
+            //    Console.WriteLine("Day: {0}", dayName);
+            //}
+
+            //#endregion
+
+            //#region Usando SWITCH-CASE
+
+            //if (dayName != null)
+            //{
+            //    switch (dayNumber)
+            //    {
+            //        case 1:
+            //            dayName = "Sunday";
+            //            break;
+            //        case 2:
+            //            dayName = "Monday";
+            //            break;
+            //        case 3:
+            //            dayName = "Tuesday";
+            //            break;
+            //        case 4:
+            //            dayName = "Wednesday";
+            //            break;
+            //        case 5:
+            //            dayName = "Thyrsday";
+            //            break;
+            //        case 6:
+            //            dayName = "Friday";
+            //            break;
+            //        case 7:
+            //            dayName = "Saturday";
+            //            break;
+
+            //        default:
+            //            Console.WriteLine("Value Invalid");
+            //            break;
+            //    }
+            //    Console.WriteLine("Day: {0}", dayName);
+            //}
+            //#endregion
+
+            #endregion
+
+            #region 87. Sintaxe alternativa - expressão condicional ternária
+            double preco = double.Parse(Console.ReadLine());
+            double desconto;
 
             #region Usando IF
-            if (dayNumber == 1)
+            if (preco < 20.00)
             {
-                dayName = "Sunday";
-            }
-            else if (dayNumber == 2)
-            {
-                dayName = "Monday";
-            }
-            else if (dayNumber == 3)
-            {
-                dayName = "Tuesday";
-            }
-            else if (dayNumber == 4)
-            {
-                dayName = "Wednesday";
-            }
-            else if (dayNumber == 5)
-            {
-                dayName = "Thursday";
-            }
-            else if (dayNumber == 6)
-            {
-                dayName = "Friday";
-            }
-            else if (dayNumber == 7)
-            {
-                dayName = "Saturday";
+                desconto = preco * 0.1;
             }
             else
             {
-                Console.WriteLine("Invalid value");
+                desconto = preco * 0.05;
             }
-            if (dayName != null)
-            {
-                Console.WriteLine("Day: {0}", dayName);
-            }
-
+            Console.WriteLine(desconto);
             #endregion
 
-            #region Usando SWITCH-CASE
-
-
-            if (dayName != null)
-            {
-                switch (dayNumber)
-                {
-                    case 1:
-                        dayName = "Sunday";
-                        break;
-                    case 2:
-                        dayName = "Monday";
-                        break;
-                    case 3:
-                        dayName = "Tuesday";
-                        break;
-                    case 4:
-                        dayName = "Wednesday";
-                        break;
-                    case 5:
-                        dayName = "Thyrsday";
-                        break;
-                    case 6:
-                        dayName = "Friday";
-                        break;
-                    case 7:
-                        dayName = "Saturday";
-                        break;
-
-                    default:
-                        Console.WriteLine("Value Invalid");
-                        break;
-                }
-                Console.WriteLine("Day: {0}", dayName);
-            }
+            #region Ternaria
+            double descontoTernario = (preco < 20.0) ? preco * 0.1 : preco * 0.5;
+            Console.WriteLine(desconto);
             #endregion
 
-
             #endregion
-
         }
         #region Função para calcular a média de um array do tipo double
         static void CalcularMediaDoubleArray(int n)
