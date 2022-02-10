@@ -1331,15 +1331,100 @@ namespace Course
             #endregion
 
             #region 85. Inferência de tipos: palavra var
-            var x = 10;
-            var y = 20.0;
-            var z = "Marcia";
+            //var x = 10;
+            //var y = 20.0;
+            //var z = "Marcia";
 
-            Console.WriteLine(x);
-            Console.WriteLine(y);
-            Console.WriteLine(z);
+            //Console.WriteLine(x);
+            //Console.WriteLine(y);
+            //Console.WriteLine(z);
 
-            //sempre que possivel definit o tipo da variavel como int, double string etc evitando falhas no condigo com o var
+            ////sempre que possivel definit o tipo da variavel como int, double string etc evitando falhas no condigo com o var
+            #endregion
+
+            #region 86. Sintaxe alternativa - switch-case
+            Console.Write("Digite o dia da semana(1~7):  ");
+            int dayNumber = int.Parse(Console.ReadLine());
+            String dayName = null;
+
+            #region Usando IF
+            if (dayNumber == 1)
+            {
+                dayName = "Sunday";
+            }
+            else if (dayNumber == 2)
+            {
+                dayName = "Monday";
+            }
+            else if (dayNumber == 3)
+            {
+                dayName = "Tuesday";
+            }
+            else if (dayNumber == 4)
+            {
+                dayName = "Wednesday";
+            }
+            else if (dayNumber == 5)
+            {
+                dayName = "Thursday";
+            }
+            else if (dayNumber == 6)
+            {
+                dayName = "Friday";
+            }
+            else if (dayNumber == 7)
+            {
+                dayName = "Saturday";
+            }
+            else
+            {
+                Console.WriteLine("Invalid value");
+            }
+            if (dayName != null)
+            {
+                Console.WriteLine("Day: {0}", dayName);
+            }
+
+            #endregion
+
+            #region Usando SWITCH-CASE
+
+
+            if (dayName != null)
+            {
+                switch (dayNumber)
+                {
+                    case 1:
+                        dayName = "Sunday";
+                        break;
+                    case 2:
+                        dayName = "Monday";
+                        break;
+                    case 3:
+                        dayName = "Tuesday";
+                        break;
+                    case 4:
+                        dayName = "Wednesday";
+                        break;
+                    case 5:
+                        dayName = "Thyrsday";
+                        break;
+                    case 6:
+                        dayName = "Friday";
+                        break;
+                    case 7:
+                        dayName = "Saturday";
+                        break;
+
+                    default:
+                        Console.WriteLine("Value Invalid");
+                        break;
+                }
+                Console.WriteLine("Day: {0}", dayName);
+            }
+            #endregion
+
+
             #endregion
 
         }
