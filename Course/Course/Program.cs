@@ -1518,41 +1518,84 @@ namespace Course
             #endregion
 
             #region 90. TimeSpan - representando durações
-            TimeSpan t1 = new TimeSpan(0, 1, 30);
-            Console.WriteLine(t1);
+            //TimeSpan t1 = new TimeSpan(0, 1, 30);
+            //Console.WriteLine(t1);
 
-            Console.WriteLine(t1.Ticks);
+            //Console.WriteLine(t1.Ticks);
 
-            t1 = new TimeSpan();
-            Console.WriteLine(t1);
+            //t1 = new TimeSpan();
+            //Console.WriteLine(t1);
 
-            t1 = new TimeSpan(900000000L);
-            Console.WriteLine(t1);
+            //t1 = new TimeSpan(900000000L);
+            //Console.WriteLine(t1);
 
-            t1 = new TimeSpan(2, 11, 21);
-            Console.WriteLine(t1);
+            //t1 = new TimeSpan(2, 11, 21);
+            //Console.WriteLine(t1);
 
-            t1 = new TimeSpan(1, 2, 11, 21);
-            Console.WriteLine(t1);
+            //t1 = new TimeSpan(1, 2, 11, 21);
+            //Console.WriteLine(t1);
 
-            t1 = new TimeSpan(1, 2, 11, 21, 321);
-            Console.WriteLine(t1);
+            //t1 = new TimeSpan(1, 2, 11, 21, 321);
+            //Console.WriteLine(t1);
 
-            t1 = TimeSpan.FromDays(1.5);
-            Console.WriteLine(t1);
+            //t1 = TimeSpan.FromDays(1.5);
+            //Console.WriteLine(t1);
 
-            t1 = TimeSpan.FromHours(1.5);
-            Console.WriteLine(t1);
+            //t1 = TimeSpan.FromHours(1.5);
+            //Console.WriteLine(t1);
 
-            t1 = TimeSpan.FromMinutes(1.5);
-            Console.WriteLine(t1);
+            //t1 = TimeSpan.FromMinutes(1.5);
+            //Console.WriteLine(t1);
 
-            t1 = TimeSpan.FromSeconds(1.5);
-            Console.WriteLine(t1);
+            //t1 = TimeSpan.FromSeconds(1.5);
+            //Console.WriteLine(t1);
 
-            t1 = TimeSpan.FromMilliseconds(1.5);
-            Console.WriteLine(t1);
+            //t1 = TimeSpan.FromMilliseconds(1.5);
+            //Console.WriteLine(t1);
 
+            #endregion
+
+            #region 91. Propriedades e operações com DateTime
+            DateTime d = new DateTime(2001, 8, 15, 13, 45, 58, 275);
+
+            Console.WriteLine(d);
+
+            Console.WriteLine("1) Date: {0}",d.Date);
+            Console.WriteLine("2) Day: {0}", d.Day);
+            Console.WriteLine("3) DayOfWeek: {0}", d.DayOfWeek);
+            Console.WriteLine("4) DayOfYear: {0}", d.DayOfYear);
+            Console.WriteLine("5) Hour: {0}", d.Hour);
+            Console.WriteLine("6) Kind: {0}", d.Kind);
+            Console.WriteLine("7) Millisecond: {0}", d.Millisecond);
+            Console.WriteLine("8) Minute: {0}", d.Minute);
+            Console.WriteLine("9) Month: {0}", d.Month);
+            Console.WriteLine("10) Second: {0}", d.Second);
+            Console.WriteLine("11) Ticks: {0}", d.Ticks);
+            Console.WriteLine("12) TimeOfDay: {0}", d.TimeOfDay);
+            Console.WriteLine("13) Year: {0}", d.Year);
+
+            #region Formatação
+            Console.WriteLine(d.ToLongDateString());
+            Console.WriteLine(d.ToShortDateString());
+            Console.WriteLine(d.ToLongTimeString());
+            Console.WriteLine(d.ToShortTimeString());
+            Console.WriteLine(d.ToString());
+
+            Console.WriteLine(d.ToString("yyyy-MM-dd HH:mm:ss"));
+            Console.WriteLine(d.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+            #endregion
+
+            #region Operações com data
+            DateTime d2;
+            Console.WriteLine(d2 = d.AddHours(2));
+            Console.WriteLine(d2 = d.AddMinutes(3));
+
+            Console.WriteLine(d2 = DateTime.Now);
+            Console.WriteLine(d2 = d2.AddDays(7));
+
+            TimeSpan t = d2.Subtract(d);
+            Console.WriteLine(t);
+            #endregion
             #endregion
         }
         #region Função para calcular a média de um array do tipo double
