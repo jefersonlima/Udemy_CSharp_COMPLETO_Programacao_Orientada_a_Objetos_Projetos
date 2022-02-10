@@ -1380,6 +1380,7 @@ namespace Course
             //{
             //    Console.WriteLine("Invalid value");
             //}
+            //// bool b1 String.IsNullOrEmpty(dayName);
             //if (dayName != null)
             //{
             //    Console.WriteLine("Day: {0}", dayName);
@@ -1426,25 +1427,56 @@ namespace Course
             #endregion
 
             #region 87. Sintaxe alternativa - expressão condicional ternária
-            double preco = double.Parse(Console.ReadLine());
-            double desconto;
+            //double preco = double.Parse(Console.ReadLine());
+            //double desconto;
 
-            #region Usando IF
-            if (preco < 20.00)
-            {
-                desconto = preco * 0.1;
-            }
-            else
-            {
-                desconto = preco * 0.05;
-            }
-            Console.WriteLine(desconto);
+            //#region Usando IF
+            //if (preco < 20.00)
+            //{
+            //    desconto = preco * 0.1;
+            //}
+            //else
+            //{
+            //    desconto = preco * 0.05;
+            //}
+            //Console.WriteLine(desconto);
+            //#endregion
+
+            //#region Ternaria
+            //double descontoTernario = (preco < 20.0) ? preco * 0.1 : preco * 0.5;
+            //Console.WriteLine(desconto);
+            //#endregion
+
             #endregion
 
-            #region Ternaria
-            double descontoTernario = (preco < 20.0) ? preco * 0.1 : preco * 0.5;
-            Console.WriteLine(desconto);
-            #endregion
+            #region 88. Funções interessantes para string
+            string original = "abcde FGHIJ ABC abc DEFG     ";
+
+            //string s1 = original.ToUpper();
+            //string s2 = original.ToLower();
+            //string s3 = original.Trim();
+            //int n1 = original.IndexOF("bc");
+            //int n2 = original.LastIndexOF("bc");
+            //string s4 = original.Substring(3);
+            //string s5 = original.Substring(3, 5);
+            //string s6 = original.Replace('a', 'x');
+            //string s7 = original.Replace('abc', 'xy');
+            //bool b1 = String.IsNullOrEmpty(original);
+            //bool b2 = String.IsNullOrWhiteSpace(original);
+            Console.WriteLine("original             : -{0}-", original);
+            Console.WriteLine("ToUpper              : -{0}-", original.ToUpper());
+            Console.WriteLine("ToLower              : -{0}-", original.ToLower());
+            Console.WriteLine("ToTrim               : -{0}-", original.Trim());
+            Console.WriteLine("IndexOf('bc')        : -{0}-", original.IndexOf("bc"));
+            Console.WriteLine("LastIndexOf('bc')    : -{0}-", original.LastIndexOf("bc"));
+            Console.WriteLine("Substring(3)         : -{0}-", original.Substring(3));
+            Console.WriteLine("Substring(3, 5)      : -{0}-", original.Substring(3, 5));
+            Console.WriteLine("Replace('a', 'x')    : -{0}-", original.Replace('a', 'x'));
+            Console.WriteLine("Replace('abc', 'xy') : -{0}-", original.Replace("abc", "xy"));
+            Console.WriteLine("IsNullOrEmpty        : -{0}-", String.IsNullOrEmpty(original));
+            Console.WriteLine("IsNullOrWhiteSpace   : -{0}-", String.IsNullOrWhiteSpace(original));
+
+
 
             #endregion
         }
