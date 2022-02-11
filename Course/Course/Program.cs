@@ -1600,44 +1600,95 @@ namespace Course
             #endregion
 
             #region 92. Propriedades e operações com TimeSpan
-            TimeSpan t1;
-            Console.WriteLine(t1 = TimeSpan.MaxValue);
-            Console.WriteLine(t1 = TimeSpan.MinValue);
-            Console.WriteLine(t1 = TimeSpan.Zero);
+            //TimeSpan t1;
+            //Console.WriteLine(t1 = TimeSpan.MaxValue);
+            //Console.WriteLine(t1 = TimeSpan.MinValue);
+            //Console.WriteLine(t1 = TimeSpan.Zero);
 
-            Console.WriteLine(t1 = new TimeSpan(2, 3, 5, 7, 11));
+            //Console.WriteLine(t1 = new TimeSpan(2, 3, 5, 7, 11));
 
-            Console.WriteLine(" Days: {0}", t1.Days);
-            Console.WriteLine(" Hours: {0}", t1.Hours);
-            Console.WriteLine(" Minutes: {0}", t1.Minutes);
-            Console.WriteLine(" Milliseconds: {0}", t1.Milliseconds);
-            Console.WriteLine(" Seconds: {0}", t1.Seconds);
-            Console.WriteLine(" Ticks: {0}", t1.Ticks);
+            //Console.WriteLine(" Days: {0}", t1.Days);
+            //Console.WriteLine(" Hours: {0}", t1.Hours);
+            //Console.WriteLine(" Minutes: {0}", t1.Minutes);
+            //Console.WriteLine(" Milliseconds: {0}", t1.Milliseconds);
+            //Console.WriteLine(" Seconds: {0}", t1.Seconds);
+            //Console.WriteLine(" Ticks: {0}", t1.Ticks);
 
-            Console.WriteLine(" TotalDays: {0}", t1.TotalDays);
-            Console.WriteLine(" TotalHours: {0}", t1.TotalHours);
-            Console.WriteLine(" TotalMinutes: {0}", t1.TotalMinutes);
-            Console.WriteLine(" TotalSeconds: {0}", t1.TotalSeconds);
-            Console.WriteLine(" TotalMilliseconds: {0}", t1.TotalMilliseconds);
+            //Console.WriteLine(" TotalDays: {0}", t1.TotalDays);
+            //Console.WriteLine(" TotalHours: {0}", t1.TotalHours);
+            //Console.WriteLine(" TotalMinutes: {0}", t1.TotalMinutes);
+            //Console.WriteLine(" TotalSeconds: {0}", t1.TotalSeconds);
+            //Console.WriteLine(" TotalMilliseconds: {0}", t1.TotalMilliseconds);
 
-            #region Opreções com TimeSpam
-            TimeSpan t2 = new TimeSpan(1, 30, 10);
-            TimeSpan t3 = new TimeSpan(0, 10, 5);
+            //#region Opreções com TimeSpam
+            //TimeSpan t2 = new TimeSpan(1, 30, 10);
+            //TimeSpan t3 = new TimeSpan(0, 10, 5);
 
-            TimeSpan sum = t2.Add(t3);
-            Console.WriteLine(sum);
+            //TimeSpan sum = t2.Add(t3);
+            //Console.WriteLine(sum);
 
-            TimeSpan dif = t2.Subtract(t3);
-            Console.WriteLine(dif);
+            //TimeSpan dif = t2.Subtract(t3);
+            //Console.WriteLine(dif);
 
-            TimeSpan mult = t3.Multiply(2.0);
-            Console.WriteLine(mult);
+            //TimeSpan mult = t3.Multiply(2.0);
+            //Console.WriteLine(mult);
 
-            TimeSpan div = t3.Divide(2.0);
-            Console.WriteLine(div);
+            //TimeSpan div = t3.Divide(2.0);
+            //Console.WriteLine(div);
+
+            //#endregion
 
             #endregion
 
+            #region 93. DateTimeKind e padrão ISO 8601
+            DateTime d1 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Local);
+
+            DateTime d2 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Utc);
+
+            DateTime d3 = new DateTime(2000, 8, 15, 13, 5, 58);
+
+            Console.WriteLine(d1);
+            Console.WriteLine(d2);
+            Console.WriteLine(d3);
+
+            Console.WriteLine();
+            Console.WriteLine("d1: {0}", d1);
+            Console.WriteLine("d1 Kind: {0}", d1.Kind);
+            Console.WriteLine("d1 to Local: {0}", d1.ToLocalTime());
+            Console.WriteLine("d1 to UTC: {0}", d1.ToUniversalTime());
+
+            Console.WriteLine();
+            Console.WriteLine("d2: {0}", d2);
+            Console.WriteLine("d2 Kind: {0}", d2.Kind);
+            Console.WriteLine("d2 to Local: {0}", d2.ToLocalTime());
+            Console.WriteLine("d2 to UTC: {0}", d2.ToUniversalTime());
+
+            Console.WriteLine();
+            Console.WriteLine("d3: {0}", d3);
+            Console.WriteLine("d3 Kind: {0}", d3.Kind);
+            Console.WriteLine("d3 to Local: {0}", d3.ToLocalTime());
+            Console.WriteLine("d3 to UTC: {0}", d3.ToUniversalTime());
+
+            Console.WriteLine();
+            DateTime d4 = DateTime.Parse("2000-08-15 13:05:58");
+            DateTime d5 = DateTime.Parse("2000-08-15T13:05:58Z");
+            Console.WriteLine(d4);
+            Console.WriteLine(d5);
+
+            Console.WriteLine();
+            Console.WriteLine("d4: {0}", d4);
+            Console.WriteLine("d4 Kind: {0}", d4.Kind);
+            Console.WriteLine("d4 to Local: {0}", d4.ToLocalTime());
+            Console.WriteLine("d4 to UTC: {0}", d4.ToUniversalTime());
+
+            Console.WriteLine();
+            Console.WriteLine("d5: {0}", d5);
+            Console.WriteLine("d5 Kind: {0}", d5.Kind);
+            Console.WriteLine("d5 to Local: {0}", d5.ToLocalTime());
+            Console.WriteLine("d5 to UTC: {0}", d5.ToUniversalTime());
+
+            Console.WriteLine(d4.ToString("yyyy-MM-ddTHH:mm:ssZ")); // Errado não fazer assim
+            Console.WriteLine(d4.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")); // correto
             #endregion
         }
         #region Função para calcular a média de um array do tipo double
