@@ -1694,19 +1694,28 @@ namespace Course
             #endregion
 
             #region 115. Enumerações
+            ////OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+            ////OrderStatus os = (OrderStatus)Enum.Parse(typeof(OrderStatus), "Delivered");
+            ////OrderStatus os;
+            ////Enum.TryParse("Delivered", out os);
+
+            //Order order = new Order { Id = 1000, Moment = DateTime.Now, Status = OrderStatus.PendingPayment };
+            //Console.WriteLine(order);
+
+            //string txt = OrderStatus.PendingPayment.ToString();
+            //Console.WriteLine(txt);
+
+            //OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+            //Console.WriteLine(os);
+
+            #endregion
+
+            #region 120. Exercício resolvido 01 - PARTE 2/3
             //OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
             //OrderStatus os = (OrderStatus)Enum.Parse(typeof(OrderStatus), "Delivered");
             //OrderStatus os;
             //Enum.TryParse("Delivered", out os);
 
-            Order order = new Order { Id = 1000, Moment = DateTime.Now, Status = OrderStatus.PendingPayment };
-            Console.WriteLine(order);
-
-            string txt = OrderStatus.PendingPayment.ToString();
-            Console.WriteLine(txt);
-
-            OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
-            Console.WriteLine(os);
 
             #endregion
         }
