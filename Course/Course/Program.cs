@@ -1556,46 +1556,88 @@ namespace Course
             #endregion
 
             #region 91. Propriedades e operações com DateTime
-            DateTime d = new DateTime(2001, 8, 15, 13, 45, 58, 275);
+            //DateTime d = new DateTime(2001, 8, 15, 13, 45, 58, 275);
 
-            Console.WriteLine(d);
+            //Console.WriteLine(d);
 
-            Console.WriteLine("1) Date: {0}",d.Date);
-            Console.WriteLine("2) Day: {0}", d.Day);
-            Console.WriteLine("3) DayOfWeek: {0}", d.DayOfWeek);
-            Console.WriteLine("4) DayOfYear: {0}", d.DayOfYear);
-            Console.WriteLine("5) Hour: {0}", d.Hour);
-            Console.WriteLine("6) Kind: {0}", d.Kind);
-            Console.WriteLine("7) Millisecond: {0}", d.Millisecond);
-            Console.WriteLine("8) Minute: {0}", d.Minute);
-            Console.WriteLine("9) Month: {0}", d.Month);
-            Console.WriteLine("10) Second: {0}", d.Second);
-            Console.WriteLine("11) Ticks: {0}", d.Ticks);
-            Console.WriteLine("12) TimeOfDay: {0}", d.TimeOfDay);
-            Console.WriteLine("13) Year: {0}", d.Year);
+            //Console.WriteLine("1) Date: {0}", d.Date);
+            //Console.WriteLine("2) Day: {0}", d.Day);
+            //Console.WriteLine("3) DayOfWeek: {0}", d.DayOfWeek);
+            //Console.WriteLine("4) DayOfYear: {0}", d.DayOfYear);
+            //Console.WriteLine("5) Hour: {0}", d.Hour);
+            //Console.WriteLine("6) Kind: {0}", d.Kind);
+            //Console.WriteLine("7) Millisecond: {0}", d.Millisecond);
+            //Console.WriteLine("8) Minute: {0}", d.Minute);
+            //Console.WriteLine("9) Month: {0}", d.Month);
+            //Console.WriteLine("10) Second: {0}", d.Second);
+            //Console.WriteLine("11) Ticks: {0}", d.Ticks);
+            //Console.WriteLine("12) TimeOfDay: {0}", d.TimeOfDay);
+            //Console.WriteLine("13) Year: {0}", d.Year);
 
-            #region Formatação
-            Console.WriteLine(d.ToLongDateString());
-            Console.WriteLine(d.ToShortDateString());
-            Console.WriteLine(d.ToLongTimeString());
-            Console.WriteLine(d.ToShortTimeString());
-            Console.WriteLine(d.ToString());
+            //#region Formatação
+            //Console.WriteLine(d.ToLongDateString());
+            //Console.WriteLine(d.ToShortDateString());
+            //Console.WriteLine(d.ToLongTimeString());
+            //Console.WriteLine(d.ToShortTimeString());
+            //Console.WriteLine(d.ToString());
 
-            Console.WriteLine(d.ToString("yyyy-MM-dd HH:mm:ss"));
-            Console.WriteLine(d.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+            //Console.WriteLine(d.ToString("yyyy-MM-dd HH:mm:ss"));
+            //Console.WriteLine(d.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+            //#endregion
+
+            //#region Operações com data
+            //DateTime d2;
+            //Console.WriteLine(d2 = d.AddHours(2));
+            //Console.WriteLine(d2 = d.AddMinutes(3));
+
+            //Console.WriteLine(d2 = DateTime.Now);
+            //Console.WriteLine(d2 = d2.AddDays(7));
+
+            //TimeSpan t = d2.Subtract(d);
+            //Console.WriteLine(t);
+            //#endregion
+
             #endregion
 
-            #region Operações com data
-            DateTime d2;
-            Console.WriteLine(d2 = d.AddHours(2));
-            Console.WriteLine(d2 = d.AddMinutes(3));
+            #region 92. Propriedades e operações com TimeSpan
+            TimeSpan t1;
+            Console.WriteLine(t1 = TimeSpan.MaxValue);
+            Console.WriteLine(t1 = TimeSpan.MinValue);
+            Console.WriteLine(t1 = TimeSpan.Zero);
 
-            Console.WriteLine(d2 = DateTime.Now);
-            Console.WriteLine(d2 = d2.AddDays(7));
+            Console.WriteLine(t1 = new TimeSpan(2, 3, 5, 7, 11));
 
-            TimeSpan t = d2.Subtract(d);
-            Console.WriteLine(t);
+            Console.WriteLine(" Days: {0}", t1.Days);
+            Console.WriteLine(" Hours: {0}", t1.Hours);
+            Console.WriteLine(" Minutes: {0}", t1.Minutes);
+            Console.WriteLine(" Milliseconds: {0}", t1.Milliseconds);
+            Console.WriteLine(" Seconds: {0}", t1.Seconds);
+            Console.WriteLine(" Ticks: {0}", t1.Ticks);
+
+            Console.WriteLine(" TotalDays: {0}", t1.TotalDays);
+            Console.WriteLine(" TotalHours: {0}", t1.TotalHours);
+            Console.WriteLine(" TotalMinutes: {0}", t1.TotalMinutes);
+            Console.WriteLine(" TotalSeconds: {0}", t1.TotalSeconds);
+            Console.WriteLine(" TotalMilliseconds: {0}", t1.TotalMilliseconds);
+
+            #region Opreções com TimeSpam
+            TimeSpan t2 = new TimeSpan(1, 30, 10);
+            TimeSpan t3 = new TimeSpan(0, 10, 5);
+
+            TimeSpan sum = t2.Add(t3);
+            Console.WriteLine(sum);
+
+            TimeSpan dif = t2.Subtract(t3);
+            Console.WriteLine(dif);
+
+            TimeSpan mult = t3.Multiply(2.0);
+            Console.WriteLine(mult);
+
+            TimeSpan div = t3.Divide(2.0);
+            Console.WriteLine(div);
+
             #endregion
+
             #endregion
         }
         #region Função para calcular a média de um array do tipo double
