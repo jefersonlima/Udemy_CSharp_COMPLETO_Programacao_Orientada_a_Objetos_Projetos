@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Course.Entities;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Course.Entities.Enums;
 
 namespace Course
 {
@@ -1641,54 +1643,71 @@ namespace Course
             #endregion
 
             #region 93. DateTimeKind e padrão ISO 8601
-            DateTime d1 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Local);
+            //DateTime d1 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Local);
 
-            DateTime d2 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Utc);
+            //DateTime d2 = new DateTime(2000, 8, 15, 13, 5, 58, DateTimeKind.Utc);
 
-            DateTime d3 = new DateTime(2000, 8, 15, 13, 5, 58);
+            //DateTime d3 = new DateTime(2000, 8, 15, 13, 5, 58);
 
-            Console.WriteLine(d1);
-            Console.WriteLine(d2);
-            Console.WriteLine(d3);
+            //Console.WriteLine(d1);
+            //Console.WriteLine(d2);
+            //Console.WriteLine(d3);
 
-            Console.WriteLine();
-            Console.WriteLine("d1: {0}", d1);
-            Console.WriteLine("d1 Kind: {0}", d1.Kind);
-            Console.WriteLine("d1 to Local: {0}", d1.ToLocalTime());
-            Console.WriteLine("d1 to UTC: {0}", d1.ToUniversalTime());
+            //Console.WriteLine();
+            //Console.WriteLine("d1: {0}", d1);
+            //Console.WriteLine("d1 Kind: {0}", d1.Kind);
+            //Console.WriteLine("d1 to Local: {0}", d1.ToLocalTime());
+            //Console.WriteLine("d1 to UTC: {0}", d1.ToUniversalTime());
 
-            Console.WriteLine();
-            Console.WriteLine("d2: {0}", d2);
-            Console.WriteLine("d2 Kind: {0}", d2.Kind);
-            Console.WriteLine("d2 to Local: {0}", d2.ToLocalTime());
-            Console.WriteLine("d2 to UTC: {0}", d2.ToUniversalTime());
+            //Console.WriteLine();
+            //Console.WriteLine("d2: {0}", d2);
+            //Console.WriteLine("d2 Kind: {0}", d2.Kind);
+            //Console.WriteLine("d2 to Local: {0}", d2.ToLocalTime());
+            //Console.WriteLine("d2 to UTC: {0}", d2.ToUniversalTime());
 
-            Console.WriteLine();
-            Console.WriteLine("d3: {0}", d3);
-            Console.WriteLine("d3 Kind: {0}", d3.Kind);
-            Console.WriteLine("d3 to Local: {0}", d3.ToLocalTime());
-            Console.WriteLine("d3 to UTC: {0}", d3.ToUniversalTime());
+            //Console.WriteLine();
+            //Console.WriteLine("d3: {0}", d3);
+            //Console.WriteLine("d3 Kind: {0}", d3.Kind);
+            //Console.WriteLine("d3 to Local: {0}", d3.ToLocalTime());
+            //Console.WriteLine("d3 to UTC: {0}", d3.ToUniversalTime());
 
-            Console.WriteLine();
-            DateTime d4 = DateTime.Parse("2000-08-15 13:05:58");
-            DateTime d5 = DateTime.Parse("2000-08-15T13:05:58Z");
-            Console.WriteLine(d4);
-            Console.WriteLine(d5);
+            //Console.WriteLine();
+            //DateTime d4 = DateTime.Parse("2000-08-15 13:05:58");
+            //DateTime d5 = DateTime.Parse("2000-08-15T13:05:58Z");
+            //Console.WriteLine(d4);
+            //Console.WriteLine(d5);
 
-            Console.WriteLine();
-            Console.WriteLine("d4: {0}", d4);
-            Console.WriteLine("d4 Kind: {0}", d4.Kind);
-            Console.WriteLine("d4 to Local: {0}", d4.ToLocalTime());
-            Console.WriteLine("d4 to UTC: {0}", d4.ToUniversalTime());
+            //Console.WriteLine();
+            //Console.WriteLine("d4: {0}", d4);
+            //Console.WriteLine("d4 Kind: {0}", d4.Kind);
+            //Console.WriteLine("d4 to Local: {0}", d4.ToLocalTime());
+            //Console.WriteLine("d4 to UTC: {0}", d4.ToUniversalTime());
 
-            Console.WriteLine();
-            Console.WriteLine("d5: {0}", d5);
-            Console.WriteLine("d5 Kind: {0}", d5.Kind);
-            Console.WriteLine("d5 to Local: {0}", d5.ToLocalTime());
-            Console.WriteLine("d5 to UTC: {0}", d5.ToUniversalTime());
+            //Console.WriteLine();
+            //Console.WriteLine("d5: {0}", d5);
+            //Console.WriteLine("d5 Kind: {0}", d5.Kind);
+            //Console.WriteLine("d5 to Local: {0}", d5.ToLocalTime());
+            //Console.WriteLine("d5 to UTC: {0}", d5.ToUniversalTime());
 
-            Console.WriteLine(d4.ToString("yyyy-MM-ddTHH:mm:ssZ")); // Errado não fazer assim
-            Console.WriteLine(d4.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")); // correto
+            //Console.WriteLine(d4.ToString("yyyy-MM-ddTHH:mm:ssZ")); // Errado não fazer assim
+            //Console.WriteLine(d4.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")); // correto
+            #endregion
+
+            #region 115. Enumerações
+            //OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+            //OrderStatus os = (OrderStatus)Enum.Parse(typeof(OrderStatus), "Delivered");
+            //OrderStatus os;
+            //Enum.TryParse("Delivered", out os);
+
+            Order order = new Order { Id = 1000, Moment = DateTime.Now, Status = OrderStatus.PendingPayment };
+            Console.WriteLine(order);
+
+            string txt = OrderStatus.PendingPayment.ToString();
+            Console.WriteLine(txt);
+
+            OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+            Console.WriteLine(os);
+
             #endregion
         }
         #region Função para calcular a média de um array do tipo double
