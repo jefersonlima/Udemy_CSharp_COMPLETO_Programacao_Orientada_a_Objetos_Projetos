@@ -1719,67 +1719,91 @@ namespace Course
             #endregion
 
             #region 121. Exercício resolvido 01 - PARTE 3/3
-            Console.Write("Enter department's name: ");
-            Department department = new Department(Console.ReadLine());
+            //Console.Write("Enter department's name: ");
+            //Department department = new Department(Console.ReadLine());
 
-            Console.WriteLine("Enter worker data: ");
+            //Console.WriteLine("Enter worker data: ");
 
-            Console.Write("Name: ");
-            string name = Console.ReadLine();
+            //Console.Write("Name: ");
+            //string name = Console.ReadLine();
 
-            Console.Write("Level (Junior/MidLevel/Senior): ");
-            WorkerLevel level = Enum.Parse<WorkerLevel>(Console.ReadLine());
+            //Console.Write("Level (Junior/MidLevel/Senior): ");
+            //WorkerLevel level = Enum.Parse<WorkerLevel>(Console.ReadLine());
 
-            Console.Write("Base Salary: ");
-            double baseSalary = double.Parse(Console.ReadLine());
+            //Console.Write("Base Salary: ");
+            //double baseSalary = double.Parse(Console.ReadLine());
 
-            Worker worker = new Worker(name, level, baseSalary, department);
+            //Worker worker = new Worker(name, level, baseSalary, department);
 
-            Console.WriteLine();
-            Console.Write("How many contracts to this worker: ");
-            int contract = int.Parse(Console.ReadLine());
+            //Console.WriteLine();
+            //Console.Write("How many contracts to this worker: ");
+            //int contract = int.Parse(Console.ReadLine());
 
-            Console.WriteLine();
-            for (int i = 0; i < contract; i++)
-            {
-                Console.WriteLine("Enter #{0} contract data: ", i+1);
-                Console.Write("Date (DD/MM/YYYY): ");
-                DateTime date = DateTime.Parse(Console.ReadLine());
-
-                Console.Write("Value per hour: ");
-                double valueHour = double.Parse(Console.ReadLine());
-
-                Console.Write("Duration (hours): ");
-                int hours = int.Parse(Console.ReadLine());
-                HourContract contr = new HourContract(date, valueHour, hours);
-                worker.AddContract(contr);
-                Console.WriteLine();
-            }
-
-            //foreach (var item in worker.Contracts)
+            //Console.WriteLine();
+            //for (int i = 0; i < contract; i++)
             //{
-            //    Console.WriteLine(item.TotalValue());
+            //    Console.WriteLine("Enter #{0} contract data: ", i+1);
+            //    Console.Write("Date (DD/MM/YYYY): ");
+            //    DateTime date = DateTime.Parse(Console.ReadLine());
+
+            //    Console.Write("Value per hour: ");
+            //    double valueHour = double.Parse(Console.ReadLine());
+
+            //    Console.Write("Duration (hours): ");
+            //    int hours = int.Parse(Console.ReadLine());
+            //    HourContract contr = new HourContract(date, valueHour, hours);
+            //    worker.AddContract(contr);
+            //    Console.WriteLine();
             //}
 
-            Console.Write("Enter month and year to calculate income (MM/YYYY): ");
+            ////foreach (var item in worker.Contracts)
+            ////{
+            ////    Console.WriteLine(item.TotalValue());
+            ////}
 
-            #region Feito por mim usando split
-            string monthAndYear = Console.ReadLine();
-            string[] monthYear = monthAndYear.Split('/');
-            int month = int.Parse(monthYear[0]);
-            int year = int.Parse(monthYear[1]);
-            #endregion
+            //Console.Write("Enter month and year to calculate income (MM/YYYY): ");
 
-            #region Feito pelo professor usando substring
+            //#region Feito por mim usando split
             //string monthAndYear = Console.ReadLine();
-            //int month = int.Parse(monthAndYear.Substring(0, 2));
-            //int year = int.Parse(monthAndYear.Substring(3));
+            //string[] monthYear = monthAndYear.Split('/');
+            //int month = int.Parse(monthYear[0]);
+            //int year = int.Parse(monthYear[1]);
+            //#endregion
+
+            //#region Feito pelo professor usando substring
+            ////string monthAndYear = Console.ReadLine();
+            ////int month = int.Parse(monthAndYear.Substring(0, 2));
+            ////int year = int.Parse(monthAndYear.Substring(3));
+            //#endregion
+
+            //Console.WriteLine();
+            //Console.WriteLine("Name: {0}", worker.Name);
+            //Console.WriteLine("Departament: {0}", worker.Department.Name);
+            //Console.WriteLine("Income for: {0}: {1}", monthAndYear, worker.Income(year, month));
+
             #endregion
 
-            Console.WriteLine();
-            Console.WriteLine("Name: {0}", worker.Name);
-            Console.WriteLine("Departament: {0}", worker.Department.Name);
-            Console.WriteLine("Income for: {0}: {1}", monthAndYear, worker.Income(year, month));
+            #region 122. Exercício resolvido 2 (demo StringBuilder)
+            Comment c1 = new Comment("Have a nice trip");
+            Comment c2 = new Comment("Wow that's awesome!");
+
+            Post p1 = new Post(DateTime.Now, "Traveling to new zealand", "I'm going to visit this wonderful country!", 12);
+            p1.AddComment(c1);
+            p1.AddComment(c2);
+            Console.WriteLine(p1);
+
+            Comment c3 = new Comment("Good night");
+            Comment c4 = new Comment("May the force be with you");
+
+            Post p2 = new Post(DateTime.Now, "Good night guys", "see you tomorrow", 5);
+            p2.AddComment(c3);
+            p2.AddComment(c4);
+
+            Console.WriteLine(p2);
+
+            Post p3 = new Post(DateTime.Now, "My wife is gorgeous", "I love her", 500000);
+
+            Console.WriteLine(p3);
 
             #endregion
         }
