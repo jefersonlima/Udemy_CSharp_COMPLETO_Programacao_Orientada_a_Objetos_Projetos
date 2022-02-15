@@ -1808,44 +1808,50 @@ namespace Course
             #endregion
 
             #region 123. Exercício proposto (Enumerações e Composição)
-            Console.WriteLine("Enter cliente data:");
-            Console.Write("Name: ");
-            string nameClient = Console.ReadLine();
-            Console.Write("Email: ");
-            string emailClient = Console.ReadLine();
-            Console.Write("Birth date (DD/MM/YYYY): ");
-            DateTime birthDateClient = DateTime.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter cliente data:");
+            //Console.Write("Name: ");
+            //string nameClient = Console.ReadLine();
+            //Console.Write("Email: ");
+            //string emailClient = Console.ReadLine();
+            //Console.Write("Birth date (DD/MM/YYYY): ");
+            //DateTime birthDateClient = DateTime.Parse(Console.ReadLine());
 
-            ClientAula123 client1 = new ClientAula123(nameClient, emailClient, birthDateClient);
+            //ClientAula123 client1 = new ClientAula123(nameClient, emailClient, birthDateClient);
 
-            Console.WriteLine("Enter order data:");
-            Console.Write("Status: ");
-            OrderStatus statusOrder = Enum.Parse<OrderStatus>(Console.ReadLine());
+            //Console.WriteLine("Enter order data:");
+            //Console.Write("Status: ");
+            //OrderStatus statusOrder = Enum.Parse<OrderStatus>(Console.ReadLine());
 
-            Console.Write("How many items to this order? ");
-            int quantityOrder = int.Parse(Console.ReadLine());
+            //Console.Write("How many items to this order? ");
+            //int quantityOrder = int.Parse(Console.ReadLine());
 
-            OrderAula123 orderAula123 = new OrderAula123(DateTime.Now, statusOrder, client1);
-            ProductAula123 product;
-            OrderItemAula123 itemAula123;
-            for (int i = 0; i < quantityOrder; i++)
-            {
-                Console.WriteLine("Enter #{0} item data: ", i +1);
-                Console.Write("Product name: ");
-                string productName = Console.ReadLine();
-                Console.Write("Product price: ");
-                double productPrice = double.Parse(Console.ReadLine());
-                Console.Write("Quantity: ");
-                int quantityProduct = int.Parse(Console.ReadLine());
+            //OrderAula123 orderAula123 = new OrderAula123(DateTime.Now, statusOrder, client1);
+            //ProductAula123 product;
+            //OrderItemAula123 itemAula123;
+            //for (int i = 0; i < quantityOrder; i++)
+            //{
+            //    Console.WriteLine("Enter #{0} item data: ", i +1);
+            //    Console.Write("Product name: ");
+            //    string productName = Console.ReadLine();
+            //    Console.Write("Product price: ");
+            //    double productPrice = double.Parse(Console.ReadLine());
+            //    Console.Write("Quantity: ");
+            //    int quantityProduct = int.Parse(Console.ReadLine());
 
-                product = new ProductAula123(productName, productPrice);
+            //    product = new ProductAula123(productName, productPrice);
 
-                itemAula123 = new OrderItemAula123(quantityProduct, productPrice, product);
+            //    itemAula123 = new OrderItemAula123(quantityProduct, productPrice, product);
 
-                orderAula123.AddItem(itemAula123);
-            }
+            //    orderAula123.AddItem(itemAula123);
+            //}
 
-            Console.WriteLine(orderAula123.ToString()); 
+            //Console.WriteLine(orderAula123.ToString()); 
+            #endregion
+
+            #region 126. Herança
+            BusinessAccount account = new BusinessAccount(8010, "Bob Brown", 100, 500);
+
+            Console.WriteLine(account.Balance);
             #endregion
         }
         #region Função para calcular a média de um array do tipo double
