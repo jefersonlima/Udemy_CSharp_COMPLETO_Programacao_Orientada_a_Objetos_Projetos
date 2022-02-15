@@ -1784,27 +1784,68 @@ namespace Course
             #endregion
 
             #region 122. Exercício resolvido 2 (demo StringBuilder)
-            Comment c1 = new Comment("Have a nice trip");
-            Comment c2 = new Comment("Wow that's awesome!");
+            //Comment c1 = new Comment("Have a nice trip");
+            //Comment c2 = new Comment("Wow that's awesome!");
 
-            Post p1 = new Post(DateTime.Now, "Traveling to new zealand", "I'm going to visit this wonderful country!", 12);
-            p1.AddComment(c1);
-            p1.AddComment(c2);
-            Console.WriteLine(p1);
+            //Post p1 = new Post(DateTime.Now, "Traveling to new zealand", "I'm going to visit this wonderful country!", 12);
+            //p1.AddComment(c1);
+            //p1.AddComment(c2);
+            //Console.WriteLine(p1);
 
-            Comment c3 = new Comment("Good night");
-            Comment c4 = new Comment("May the force be with you");
+            //Comment c3 = new Comment("Good night");
+            //Comment c4 = new Comment("May the force be with you");
 
-            Post p2 = new Post(DateTime.Now, "Good night guys", "see you tomorrow", 5);
-            p2.AddComment(c3);
-            p2.AddComment(c4);
+            //Post p2 = new Post(DateTime.Now, "Good night guys", "see you tomorrow", 5);
+            //p2.AddComment(c3);
+            //p2.AddComment(c4);
 
-            Console.WriteLine(p2);
+            //Console.WriteLine(p2);
 
-            Post p3 = new Post(DateTime.Now, "My wife is gorgeous", "I love her", 500000);
+            //Post p3 = new Post(DateTime.Now, "My wife is gorgeous", "I love her", 500000);
 
-            Console.WriteLine(p3);
+            //Console.WriteLine(p3);
 
+            #endregion
+
+            #region 123. Exercício proposto (Enumerações e Composição)
+            Console.WriteLine("Enter cliente data:");
+            Console.Write("Name: ");
+            string nameClient = Console.ReadLine();
+            Console.Write("Email: ");
+            string emailClient = Console.ReadLine();
+            Console.Write("Birth date (DD/MM/YYYY): ");
+            DateTime birthDateClient = DateTime.Parse(Console.ReadLine());
+
+            ClientAula123 client1 = new ClientAula123(nameClient, emailClient, birthDateClient);
+
+            Console.WriteLine("Enter order data:");
+            Console.Write("Status: ");
+            OrderStatus statusOrder = Enum.Parse<OrderStatus>(Console.ReadLine());
+
+            Console.Write("How many items to this order? ");
+            int quantityOrder = int.Parse(Console.ReadLine());
+
+            OrderAula123 orderAula123 = new OrderAula123(DateTime.Now, statusOrder, client1);
+            ProductAula123 product;
+            OrderItemAula123 itemAula123;
+            for (int i = 0; i < quantityOrder; i++)
+            {
+                Console.WriteLine("Enter #{0} item data: ", i +1);
+                Console.Write("Product name: ");
+                string productName = Console.ReadLine();
+                Console.Write("Product price: ");
+                double productPrice = double.Parse(Console.ReadLine());
+                Console.Write("Quantity: ");
+                int quantityProduct = int.Parse(Console.ReadLine());
+
+                product = new ProductAula123(productName, productPrice);
+
+                itemAula123 = new OrderItemAula123(quantityProduct, productPrice, product);
+
+                orderAula123.AddItem(itemAula123);
+            }
+
+            Console.WriteLine(orderAula123.ToString()); 
             #endregion
         }
         #region Função para calcular a média de um array do tipo double
