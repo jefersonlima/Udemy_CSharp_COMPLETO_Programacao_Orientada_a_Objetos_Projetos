@@ -1849,9 +1849,51 @@ namespace Course
             #endregion
 
             #region 126. Herança
-            BusinessAccount account = new BusinessAccount(8010, "Bob Brown", 100, 500);
+            //BusinessAccount account = new BusinessAccount(8010, "Bob Brown", 100, 500);
 
-            Console.WriteLine(account.Balance);
+            //Console.WriteLine(account.Balance);
+
+            ////quando está como protected só é possivel alterar na propria classe ou herdeiras
+            ////account.Balance = 200;
+            #endregion
+
+            #region 127. Upcasting e downcasting
+            Account acc = new Account(1001, "Alex", 0);
+            BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0, 500);
+
+            //UPCASTING
+            Account acc1 = bacc;
+            Account acc2 = new BusinessAccount(1003, "Bob", 0, 200);
+            Account acc3 = new SavingsAccount(1004, "Anna", 0, 0.01);
+
+            //DOWNCASTING
+            BusinessAccount acc4 = (BusinessAccount)acc2;
+            Console.WriteLine(acc4.Balance);
+            acc4.Loan(100);
+            Console.WriteLine(acc4.Balance);
+
+            //gera erro em tempo de execução devido serem de classes diferentes
+            //BusinessAccount acc5 = (BusinessAccount)acc3;
+
+            if (acc3 is BusinessAccount)
+            {
+                //BusinessAccount acc5 = (BusinessAccount)acc3;
+                BusinessAccount acc5 = acc3 as BusinessAccount;
+                Console.WriteLine(acc5.Balance);
+                acc5.Loan(100);
+                Console.WriteLine(acc5.Balance);
+                Console.WriteLine("Loan!");
+            }else if(acc3 is SavingsAccount)
+            {
+                //SavingsAccount acc5 = (SavingsAccount)acc3;
+                SavingsAccount acc5 = acc3 as SavingsAccount;
+                Console.WriteLine(acc5.Balance);
+                acc5.UpDateBalance();
+                Console.WriteLine(acc5.Balance);
+                Console.WriteLine("UpDate!");    
+            }
+
+
             #endregion
         }
         #region Função para calcular a média de um array do tipo double
