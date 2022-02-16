@@ -1895,18 +1895,76 @@ namespace Course
             #endregion
 
             #region 128. Sobreposição, palavras virtual, override e base
-            Account acc1 = new Account(1001, "Alex", 500);
-            Account acc2 = new SavingsAccount(1002, "Anna", 500, 0.01);
-            Account acc3 = new BusinessAccount(1003, "Bob", 500, 100);
+            //Account acc1 = new Account(1001, "Alex", 500);
+            //Account acc2 = new SavingsAccount(1002, "Anna", 500, 0.01);
+            //Account acc3 = new BusinessAccount(1003, "Bob", 500, 100);
 
-            acc1.Withdraw(10);
-            acc2.Withdraw(10);
-            acc3.Withdraw(10);
+            //acc1.Withdraw(10);
+            //acc2.Withdraw(10);
+            //acc3.Withdraw(10);
 
-            Console.WriteLine("Account: {0}",acc1.Balance);
-            Console.WriteLine("SavingAccount: {0}", acc2.Balance);
-            Console.WriteLine("BusinessAccount: {0}", acc3.Balance);
+            //Console.WriteLine("Account: {0}",acc1.Balance);
+            //Console.WriteLine("SavingAccount: {0}", acc2.Balance);
+            //Console.WriteLine("BusinessAccount: {0}", acc3.Balance);
             #endregion
+
+            #region 129. Classes e métodos selados
+
+            #endregion
+
+            #region 131. Exercício resolvido - PARTE 1, 132. Exercício resolvido - PARTE 2
+            Console.Write("Enter the number of employees: ");
+            int quantityEmployee = int.Parse(Console.ReadLine());
+
+            EmployeeClass131 employee;
+            List<EmployeeClass131> listEmployeeClass131s = new List<EmployeeClass131>();
+            for (int i = 0; i < quantityEmployee; i++)
+            {
+                Console.WriteLine("Employee #{0} data: ", i+1);
+                Console.Write("Outsourced (y/n)? ");
+                char boolOutsourced = char.Parse(Console.ReadLine());
+
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+
+                Console.Write("Hours: ");
+                int hours = int.Parse(Console.ReadLine());
+
+                Console.Write("Value per hour: ");
+                double valuePerHour = double.Parse(Console.ReadLine());
+
+                if (boolOutsourced == 'y' || boolOutsourced == 'Y')
+                {
+                    Console.Write("Additional charge: ");
+                    double additionalCharge = double.Parse(Console.ReadLine());
+
+                    employee = new OutsourceEmployee(name, hours, valuePerHour, additionalCharge);
+                }
+                else
+                {
+                    employee = new EmployeeClass131(name, hours, valuePerHour);
+                }
+                listEmployeeClass131s.Add(employee);
+            }
+
+            //versão do professor
+            Console.WriteLine();
+            Console.WriteLine("PAYMENTS: ");
+            foreach (var item in listEmployeeClass131s)
+            {
+                Console.WriteLine("{0} - $ {1}", item.Name, item.Payment());
+            }
+            //minha versão
+            Console.WriteLine();
+            Console.WriteLine("PAYMENTS: ");
+            foreach (var item in listEmployeeClass131s)
+            {
+                Console.WriteLine(item.ToString());
+            }
+            
+            #endregion
+
+
         }
         #region Função para calcular a média de um array do tipo double
         static void CalcularMediaDoubleArray(int n)
