@@ -1913,55 +1913,100 @@ namespace Course
             #endregion
 
             #region 131. Exercício resolvido - PARTE 1, 132. Exercício resolvido - PARTE 2
-            Console.Write("Enter the number of employees: ");
-            int quantityEmployee = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the number of employees: ");
+            //int quantityEmployee = int.Parse(Console.ReadLine());
 
-            EmployeeClass131 employee;
-            List<EmployeeClass131> listEmployeeClass131s = new List<EmployeeClass131>();
-            for (int i = 0; i < quantityEmployee; i++)
+            //EmployeeClass131 employee;
+            //List<EmployeeClass131> listEmployeeClass131s = new List<EmployeeClass131>();
+            //for (int i = 0; i < quantityEmployee; i++)
+            //{
+            //    Console.WriteLine("Employee #{0} data: ", i+1);
+            //    Console.Write("Outsourced (y/n)? ");
+            //    char boolOutsourced = char.Parse(Console.ReadLine());
+
+            //    Console.Write("Name: ");
+            //    string name = Console.ReadLine();
+
+            //    Console.Write("Hours: ");
+            //    int hours = int.Parse(Console.ReadLine());
+
+            //    Console.Write("Value per hour: ");
+            //    double valuePerHour = double.Parse(Console.ReadLine());
+
+            //    if (boolOutsourced == 'y' || boolOutsourced == 'Y')
+            //    {
+            //        Console.Write("Additional charge: ");
+            //        double additionalCharge = double.Parse(Console.ReadLine());
+
+            //        employee = new OutsourceEmployee(name, hours, valuePerHour, additionalCharge);
+            //    }
+            //    else
+            //    {
+            //        employee = new EmployeeClass131(name, hours, valuePerHour);
+            //    }
+            //    listEmployeeClass131s.Add(employee);
+            //}
+
+            ////versão do professor
+            //Console.WriteLine();
+            //Console.WriteLine("PAYMENTS: ");
+            //foreach (var item in listEmployeeClass131s)
+            //{
+            //    Console.WriteLine("{0} - $ {1}", item.Name, item.Payment());
+            //}
+            ////minha versão
+            //Console.WriteLine();
+            //Console.WriteLine("PAYMENTS: ");
+            //foreach (var item in listEmployeeClass131s)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+
+            #endregion
+
+            #region 133. Exercício proposto (herança e polimorfismo)
+            Console.Write("Enter the number of products: ");
+            int quantityProduct = int.Parse(Console.ReadLine());
+
+            ProductClass133 product;
+            List<ProductClass133> listProducts = new List<ProductClass133>();
+            for (int i = 0; i < quantityProduct; i++)
             {
-                Console.WriteLine("Employee #{0} data: ", i+1);
-                Console.Write("Outsourced (y/n)? ");
-                char boolOutsourced = char.Parse(Console.ReadLine());
+                Console.WriteLine("Product #{0} data: ", i +1);
+                Console.Write("Common, used, or imported (c / u / i)? ");
+                char typeProduct = char.Parse(Console.ReadLine());
 
                 Console.Write("Name: ");
                 string name = Console.ReadLine();
 
-                Console.Write("Hours: ");
-                int hours = int.Parse(Console.ReadLine());
+                Console.Write("Price: ");
+                double price = double.Parse(Console.ReadLine());
 
-                Console.Write("Value per hour: ");
-                double valuePerHour = double.Parse(Console.ReadLine());
-
-                if (boolOutsourced == 'y' || boolOutsourced == 'Y')
+                if (typeProduct == 'u' || typeProduct == 'U')
                 {
-                    Console.Write("Additional charge: ");
-                    double additionalCharge = double.Parse(Console.ReadLine());
-
-                    employee = new OutsourceEmployee(name, hours, valuePerHour, additionalCharge);
+                    Console.Write("Manufacture date: ");
+                    DateTime manufactureDate = DateTime.Parse(Console.ReadLine());
+                    product = new UsedProductClass133(name, price, manufactureDate);
+                }
+                else if (typeProduct == 'i' || typeProduct == 'I')
+                {
+                    Console.Write("Customs fee: ");
+                    double customsFee = double.Parse(Console.ReadLine());
+                    product = new ImportdProductClass133(name, price, customsFee);
                 }
                 else
                 {
-                    employee = new EmployeeClass131(name, hours, valuePerHour);
+                    product = new ProductClass133(name, price);
                 }
-                listEmployeeClass131s.Add(employee);
+                listProducts.Add(product);
             }
 
-            //versão do professor
             Console.WriteLine();
-            Console.WriteLine("PAYMENTS: ");
-            foreach (var item in listEmployeeClass131s)
+            Console.WriteLine("PRICE TAGS:");
+            foreach (var item in listProducts)
             {
-                Console.WriteLine("{0} - $ {1}", item.Name, item.Payment());
+                Console.WriteLine(item.PriceTag());
             }
-            //minha versão
-            Console.WriteLine();
-            Console.WriteLine("PAYMENTS: ");
-            foreach (var item in listEmployeeClass131s)
-            {
-                Console.WriteLine(item.ToString());
-            }
-            
             #endregion
 
 
