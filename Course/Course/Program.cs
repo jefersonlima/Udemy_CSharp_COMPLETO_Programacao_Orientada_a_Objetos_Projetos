@@ -1965,47 +1965,74 @@ namespace Course
             #endregion
 
             #region 133. Exercício proposto (herança e polimorfismo)
-            Console.Write("Enter the number of products: ");
-            int quantityProduct = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the number of products: ");
+            //int quantityProduct = int.Parse(Console.ReadLine());
 
-            ProductClass133 product;
-            List<ProductClass133> listProducts = new List<ProductClass133>();
-            for (int i = 0; i < quantityProduct; i++)
+            //ProductClass133 product;
+            //List<ProductClass133> listProducts = new List<ProductClass133>();
+            //for (int i = 0; i < quantityProduct; i++)
+            //{
+            //    Console.WriteLine("Product #{0} data: ", i +1);
+            //    Console.Write("Common, used, or imported (c / u / i)? ");
+            //    char typeProduct = char.Parse(Console.ReadLine());
+
+            //    Console.Write("Name: ");
+            //    string name = Console.ReadLine();
+
+            //    Console.Write("Price: ");
+            //    double price = double.Parse(Console.ReadLine());
+
+            //    if (typeProduct == 'u' || typeProduct == 'U')
+            //    {
+            //        Console.Write("Manufacture date: ");
+            //        DateTime manufactureDate = DateTime.Parse(Console.ReadLine());
+            //        product = new UsedProductClass133(name, price, manufactureDate);
+            //    }
+            //    else if (typeProduct == 'i' || typeProduct == 'I')
+            //    {
+            //        Console.Write("Customs fee: ");
+            //        double customsFee = double.Parse(Console.ReadLine());
+            //        product = new ImportdProductClass133(name, price, customsFee);
+            //    }
+            //    else
+            //    {
+            //        product = new ProductClass133(name, price);
+            //    }
+            //    listProducts.Add(product);
+            //}
+
+            //Console.WriteLine();
+            //Console.WriteLine("PRICE TAGS:");
+            //foreach (var item in listProducts)
+            //{
+            //    Console.WriteLine(item.PriceTag());
+            //}
+            #endregion
+
+            #region 134. Classes abstratas
+            List<AccountClass134> listAccountClass134s = new List<AccountClass134>();
+
+            listAccountClass134s.Add(new SavingsAccountClass134(1001, "Alex", 500, 0.01));
+            listAccountClass134s.Add(new BusinessAccountClass134(1002, "Maria", 500, 400));
+            listAccountClass134s.Add(new SavingsAccountClass134(1003, "Bob", 500, 0.01));
+            listAccountClass134s.Add(new BusinessAccountClass134(1004, "Anna", 500, 400));
+
+            double sum = 0;
+            foreach (var item in listAccountClass134s)
             {
-                Console.WriteLine("Product #{0} data: ", i +1);
-                Console.Write("Common, used, or imported (c / u / i)? ");
-                char typeProduct = char.Parse(Console.ReadLine());
-
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-
-                Console.Write("Price: ");
-                double price = double.Parse(Console.ReadLine());
-
-                if (typeProduct == 'u' || typeProduct == 'U')
-                {
-                    Console.Write("Manufacture date: ");
-                    DateTime manufactureDate = DateTime.Parse(Console.ReadLine());
-                    product = new UsedProductClass133(name, price, manufactureDate);
-                }
-                else if (typeProduct == 'i' || typeProduct == 'I')
-                {
-                    Console.Write("Customs fee: ");
-                    double customsFee = double.Parse(Console.ReadLine());
-                    product = new ImportdProductClass133(name, price, customsFee);
-                }
-                else
-                {
-                    product = new ProductClass133(name, price);
-                }
-                listProducts.Add(product);
+                sum += item.Balance;
             }
 
-            Console.WriteLine();
-            Console.WriteLine("PRICE TAGS:");
-            foreach (var item in listProducts)
+            Console.WriteLine("Total balance: {0}", sum.ToString("F2", CultureInfo.InvariantCulture));
+
+            foreach (var item in listAccountClass134s)
             {
-                Console.WriteLine(item.PriceTag());
+                item.Withdraw(10);
+            }
+
+            foreach (var item in listAccountClass134s)
+            {
+                Console.WriteLine("Updated balance for account {0}: {1}", item.Number, item.Balance.ToString("F2", CultureInfo.InvariantCulture));
             }
             #endregion
 
