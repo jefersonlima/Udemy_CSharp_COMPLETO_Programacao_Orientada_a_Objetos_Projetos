@@ -2010,29 +2010,87 @@ namespace Course
             #endregion
 
             #region 134. Classes abstratas
-            List<AccountClass134> listAccountClass134s = new List<AccountClass134>();
+            //List<AccountClass134> listAccountClass134s = new List<AccountClass134>();
 
-            listAccountClass134s.Add(new SavingsAccountClass134(1001, "Alex", 500, 0.01));
-            listAccountClass134s.Add(new BusinessAccountClass134(1002, "Maria", 500, 400));
-            listAccountClass134s.Add(new SavingsAccountClass134(1003, "Bob", 500, 0.01));
-            listAccountClass134s.Add(new BusinessAccountClass134(1004, "Anna", 500, 400));
+            //listAccountClass134s.Add(new SavingsAccountClass134(1001, "Alex", 500, 0.01));
+            //listAccountClass134s.Add(new BusinessAccountClass134(1002, "Maria", 500, 400));
+            //listAccountClass134s.Add(new SavingsAccountClass134(1003, "Bob", 500, 0.01));
+            //listAccountClass134s.Add(new BusinessAccountClass134(1004, "Anna", 500, 400));
 
-            double sum = 0;
-            foreach (var item in listAccountClass134s)
+            //double sum = 0;
+            //foreach (var item in listAccountClass134s)
+            //{
+            //    sum += item.Balance;
+            //}
+
+            //Console.WriteLine("Total balance: {0}", sum.ToString("F2", CultureInfo.InvariantCulture));
+
+            //foreach (var item in listAccountClass134s)
+            //{
+            //    item.Withdraw(10);
+            //}
+
+            //foreach (var item in listAccountClass134s)
+            //{
+            //    Console.WriteLine("Updated balance for account {0}: {1}", item.Number, item.Balance.ToString("F2", CultureInfo.InvariantCulture));
+            //}
+            #endregion
+
+            #region 135. Métodos abstratos 136. Exercício resolvido (métodos abstratos)
+            Console.Write("Enter the number of shapes: ");
+            int quantityShapes = int.Parse(Console.ReadLine());
+            Shape shape;
+            List<Shape> shapesList = new List<Shape>();
+
+            for (int i = 0; i < quantityShapes; i++)
             {
-                sum += item.Balance;
+                Console.WriteLine("Shape #{0} data:", i + 1);
+                Console.Write("Rectangle or Circle (r/c)? ");
+                char typeShape = char.Parse(Console.ReadLine());
+                Console.Write("Color (Black/Blue/Red): ");
+                Color color = Enum.Parse<Color>(Console.ReadLine());
+
+                //jeito que eu fiz
+                //string enterColor = Console.ReadLine();
+                //jeito do professor
+                //Color color = Color.Black;
+                //if (enterColor == "Black")
+                //{
+                //    color = Color.Black;
+                //}
+                //else if (enterColor == "Blue")
+                //{
+                //    color = Color.Blue;
+                //}
+                //else if (enterColor == "Red")
+                //{
+                //    color = Color.Red;
+                //}
+
+                if (typeShape == 'r' || typeShape == 'R')
+                {
+                    Console.Write("Width: ");
+                    double width = double.Parse(Console.ReadLine());
+                    Console.Write("Height: ");
+                    double height = double.Parse(Console.ReadLine());
+
+                    shape = new Rectangle(color, width, height);
+                }
+                else //if (typeShape == 'c' || typeShape == 'C')
+                {
+                    Console.Write("Radius : ");
+                    double radius = double.Parse(Console.ReadLine());
+
+                    shape = new Circle(color, radius);
+                }
+                shapesList.Add(shape);
             }
 
-            Console.WriteLine("Total balance: {0}", sum.ToString("F2", CultureInfo.InvariantCulture));
-
-            foreach (var item in listAccountClass134s)
+            Console.WriteLine();
+            Console.WriteLine("SHAPE AREAS: ");
+            foreach (var item in shapesList)
             {
-                item.Withdraw(10);
-            }
-
-            foreach (var item in listAccountClass134s)
-            {
-                Console.WriteLine("Updated balance for account {0}: {1}", item.Number, item.Balance.ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine(item.Area().ToString("F2", CultureInfo.InvariantCulture)); 
             }
             #endregion
 
