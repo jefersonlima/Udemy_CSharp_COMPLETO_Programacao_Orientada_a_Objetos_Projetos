@@ -2095,46 +2095,70 @@ namespace Course
             #endregion
 
             #region 137. Exercício proposto (métodos abstratos)
-            Console.Write("Enter the number of tax payers: ");
-            int quantityPayers = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the number of tax payers: ");
+            //int quantityPayers = int.Parse(Console.ReadLine());
 
-            //Contributor contributor;
-            List<Contributor> contributors = new List<Contributor>();
-            for (int i = 1; i <= quantityPayers; i++)
+            ////Contributor contributor;
+            //List<Contributor> contributors = new List<Contributor>();
+            //for (int i = 1; i <= quantityPayers; i++)
+            //{
+            //    Console.WriteLine("Tax payer #{0} data:", i);
+            //    Console.Write("Individual or company (i/c)? ");
+            //    char typePayer = char.Parse(Console.ReadLine());
+
+            //    Console.Write("Name: ");
+            //    string name = Console.ReadLine();
+
+            //    Console.Write("Anual Income: ");
+            //    double anualIncome = double.Parse(Console.ReadLine());
+
+            //    if (typePayer == 'i' || typePayer == 'I')
+            //    {
+            //        Console.Write("Health expenditures: ");
+            //        contributors.Add(new PhysicalPerson(name, anualIncome, double.Parse(Console.ReadLine())));
+            //    }
+            //    else
+            //    {
+            //        Console.Write("Number of employees: ");
+            //        contributors.Add(new LegalPerson(name, anualIncome, int.Parse(Console.ReadLine())));
+            //    }
+            //}
+
+            //Console.WriteLine();
+            //Console.WriteLine("TAXES PAID: ");
+            //double totalTax = 0;
+            //foreach (var item in contributors)
+            //{
+            //    Console.WriteLine("{0}: $ {1}", item.Name, item.IncomeTax().ToString("F2", CultureInfo.InvariantCulture));
+            //    totalTax += item.IncomeTax();
+            //}
+
+            //Console.WriteLine();
+            //Console.WriteLine("TOTAL TAXES: $ {0}", totalTax.ToString("F2", CultureInfo.InvariantCulture));
+            #endregion
+
+            #region 141. Estrutura try-catch
+            try
             {
-                Console.WriteLine("Tax payer #{0} data:", i);
-                Console.Write("Individual or company (i/c)? ");
-                char typePayer = char.Parse(Console.ReadLine());
+                int n1 = int.Parse(Console.ReadLine());
+                int n2 = int.Parse(Console.ReadLine());
 
-                Console.Write("Name: ");
-                string name = Console.ReadLine();
-
-                Console.Write("Anual Income: ");
-                double anualIncome = double.Parse(Console.ReadLine());
-
-                if (typePayer == 'i' || typePayer == 'I')
-                {
-                    Console.Write("Health expenditures: ");
-                    contributors.Add(new PhysicalPerson(name, anualIncome, double.Parse(Console.ReadLine())));
-                }
-                else
-                {
-                    Console.Write("Number of employees: ");
-                    contributors.Add(new LegalPerson(name, anualIncome, int.Parse(Console.ReadLine())));
-                }
+                int result = n1 / n2;
+                Console.WriteLine(result);
             }
-
-            Console.WriteLine();
-            Console.WriteLine("TAXES PAID: ");
-            double totalTax = 0;
-            foreach (var item in contributors)
+            catch (DivideByZeroException)
             {
-                Console.WriteLine("{0}: $ {1}", item.Name, item.IncomeTax().ToString("F2", CultureInfo.InvariantCulture));
-                totalTax += item.IncomeTax();
+                Console.WriteLine("Division by zero is not allowed");
             }
-
-            Console.WriteLine();
-            Console.WriteLine("TOTAL TAXES: $ {0}", totalTax.ToString("F2", CultureInfo.InvariantCulture));
+            catch (FormatException e)
+            {
+                Console.WriteLine("Format error! {0}", e.Message);
+            }
+            //catch (DivideByZeroException e)
+            //{ 
+            //    Console.WriteLine("Error! {0}", e.Message);
+            //}
+            
             #endregion
 
 
