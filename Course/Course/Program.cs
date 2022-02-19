@@ -2037,61 +2037,104 @@ namespace Course
             #endregion
 
             #region 135. Métodos abstratos 136. Exercício resolvido (métodos abstratos)
-            Console.Write("Enter the number of shapes: ");
-            int quantityShapes = int.Parse(Console.ReadLine());
-            Shape shape;
-            List<Shape> shapesList = new List<Shape>();
+            //Console.Write("Enter the number of shapes: ");
+            //int quantityShapes = int.Parse(Console.ReadLine());
+            //Shape shape;
+            //List<Shape> shapesList = new List<Shape>();
 
-            for (int i = 0; i < quantityShapes; i++)
+            //for (int i = 0; i < quantityShapes; i++)
+            //{
+            //    Console.WriteLine("Shape #{0} data:", i + 1);
+            //    Console.Write("Rectangle or Circle (r/c)? ");
+            //    char typeShape = char.Parse(Console.ReadLine());
+            //    Console.Write("Color (Black/Blue/Red): ");
+            //    Color color = Enum.Parse<Color>(Console.ReadLine());
+
+            //    //jeito que eu fiz
+            //    //string enterColor = Console.ReadLine();
+            //    //jeito do professor
+            //    //Color color = Color.Black;
+            //    //if (enterColor == "Black")
+            //    //{
+            //    //    color = Color.Black;
+            //    //}
+            //    //else if (enterColor == "Blue")
+            //    //{
+            //    //    color = Color.Blue;
+            //    //}
+            //    //else if (enterColor == "Red")
+            //    //{
+            //    //    color = Color.Red;
+            //    //}
+
+            //    if (typeShape == 'r' || typeShape == 'R')
+            //    {
+            //        Console.Write("Width: ");
+            //        double width = double.Parse(Console.ReadLine());
+            //        Console.Write("Height: ");
+            //        double height = double.Parse(Console.ReadLine());
+
+            //        shape = new Rectangle(color, width, height);
+            //    }
+            //    else //if (typeShape == 'c' || typeShape == 'C')
+            //    {
+            //        Console.Write("Radius : ");
+            //        double radius = double.Parse(Console.ReadLine());
+
+            //        shape = new Circle(color, radius);
+            //    }
+            //    shapesList.Add(shape);
+            //}
+
+            //Console.WriteLine();
+            //Console.WriteLine("SHAPE AREAS: ");
+            //foreach (var item in shapesList)
+            //{
+            //    Console.WriteLine(item.Area().ToString("F2", CultureInfo.InvariantCulture)); 
+            //}
+            #endregion
+
+            #region 137. Exercício proposto (métodos abstratos)
+            Console.Write("Enter the number of tax payers: ");
+            int quantityPayers = int.Parse(Console.ReadLine());
+
+            //Contributor contributor;
+            List<Contributor> contributors = new List<Contributor>();
+            for (int i = 1; i <= quantityPayers; i++)
             {
-                Console.WriteLine("Shape #{0} data:", i + 1);
-                Console.Write("Rectangle or Circle (r/c)? ");
-                char typeShape = char.Parse(Console.ReadLine());
-                Console.Write("Color (Black/Blue/Red): ");
-                Color color = Enum.Parse<Color>(Console.ReadLine());
+                Console.WriteLine("Tax payer #{0} data:", i);
+                Console.Write("Individual or company (i/c)? ");
+                char typePayer = char.Parse(Console.ReadLine());
 
-                //jeito que eu fiz
-                //string enterColor = Console.ReadLine();
-                //jeito do professor
-                //Color color = Color.Black;
-                //if (enterColor == "Black")
-                //{
-                //    color = Color.Black;
-                //}
-                //else if (enterColor == "Blue")
-                //{
-                //    color = Color.Blue;
-                //}
-                //else if (enterColor == "Red")
-                //{
-                //    color = Color.Red;
-                //}
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
 
-                if (typeShape == 'r' || typeShape == 'R')
+                Console.Write("Anual Income: ");
+                double anualIncome = double.Parse(Console.ReadLine());
+
+                if (typePayer == 'i' || typePayer == 'I')
                 {
-                    Console.Write("Width: ");
-                    double width = double.Parse(Console.ReadLine());
-                    Console.Write("Height: ");
-                    double height = double.Parse(Console.ReadLine());
-
-                    shape = new Rectangle(color, width, height);
+                    Console.Write("Health expenditures: ");
+                    contributors.Add(new PhysicalPerson(name, anualIncome, double.Parse(Console.ReadLine())));
                 }
-                else //if (typeShape == 'c' || typeShape == 'C')
+                else
                 {
-                    Console.Write("Radius : ");
-                    double radius = double.Parse(Console.ReadLine());
-
-                    shape = new Circle(color, radius);
+                    Console.Write("Number of employees: ");
+                    contributors.Add(new LegalPerson(name, anualIncome, int.Parse(Console.ReadLine())));
                 }
-                shapesList.Add(shape);
             }
 
             Console.WriteLine();
-            Console.WriteLine("SHAPE AREAS: ");
-            foreach (var item in shapesList)
+            Console.WriteLine("TAXES PAID: ");
+            double totalTax = 0;
+            foreach (var item in contributors)
             {
-                Console.WriteLine(item.Area().ToString("F2", CultureInfo.InvariantCulture)); 
+                Console.WriteLine("{0}: $ {1}", item.Name, item.IncomeTax().ToString("F2", CultureInfo.InvariantCulture));
+                totalTax += item.IncomeTax();
             }
+
+            Console.WriteLine();
+            Console.WriteLine("TOTAL TAXES: $ {0}", totalTax.ToString("F2", CultureInfo.InvariantCulture));
             #endregion
 
 
