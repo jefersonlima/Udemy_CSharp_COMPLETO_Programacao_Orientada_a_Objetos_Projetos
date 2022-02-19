@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Course.Entities.Enums;
+using System.IO;
 
 namespace Course
 {
@@ -2138,27 +2139,54 @@ namespace Course
             #endregion
 
             #region 141. Estrutura try-catch
+            //try
+            //{
+            //    int n1 = int.Parse(Console.ReadLine());
+            //    int n2 = int.Parse(Console.ReadLine());
+
+            //    int result = n1 / n2;
+            //    Console.WriteLine(result);
+            //}
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("Division by zero is not allowed");
+            //}
+            //catch (FormatException e)
+            //{
+            //    Console.WriteLine("Format error! {0}", e.Message);
+            //}
+            ////catch (DivideByZeroException e)
+            ////{ 
+            ////    Console.WriteLine("Error! {0}", e.Message);
+            ////}
+
+            #endregion
+
+            #region 142. Bloco finally
+            FileStream fs = null;
             try
             {
-                int n1 = int.Parse(Console.ReadLine());
-                int n2 = int.Parse(Console.ReadLine());
-
-                int result = n1 / n2;
-                Console.WriteLine(result);
+                //fs = new FileStream(@"C:\temp\data.txt", FileMode.Open);
+                fs = new FileStream(@"C:\Udemy_CSharp_COMPLETO_Programacao_Orientada_a_Objetos_Projetos\data.txt", FileMode.Open);
+                StreamReader sr = new StreamReader(fs);
+                string line = sr.ReadLine();
+                Console.WriteLine(line);
             }
-            catch (DivideByZeroException)
+            catch (FileNotFoundException e)
             {
-                Console.WriteLine("Division by zero is not allowed");
+                Console.WriteLine(e.Message);
             }
-            catch (FormatException e)
+            catch(DirectoryNotFoundException e)
             {
-                Console.WriteLine("Format error! {0}", e.Message);
+                Console.WriteLine(e.Message);
             }
-            //catch (DivideByZeroException e)
-            //{ 
-            //    Console.WriteLine("Error! {0}", e.Message);
-            //}
-            
+            finally
+            {
+                if (fs != null)
+                {
+                    fs.Close();
+                }
+            }        
             #endregion
 
 
