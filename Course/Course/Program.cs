@@ -2163,30 +2163,72 @@ namespace Course
             #endregion
 
             #region 142. Bloco finally
-            FileStream fs = null;
-            try
+            //FileStream fs = null;
+            //try
+            //{
+            //    //fs = new FileStream(@"C:\temp\data.txt", FileMode.Open);
+            //    fs = new FileStream(@"C:\Udemy_CSharp_COMPLETO_Programacao_Orientada_a_Objetos_Projetos\data.txt", FileMode.Open);
+            //    StreamReader sr = new StreamReader(fs);
+            //    string line = sr.ReadLine();
+            //    Console.WriteLine(line);
+            //}
+            //catch (FileNotFoundException e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+            //catch(DirectoryNotFoundException e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+            //finally
+            //{
+            //    if (fs != null)
+            //    {
+            //        fs.Close();
+            //    }
+            //}        
+            #endregion
+
+            #region 143. Criando exceções personalizadas - PARTE 1
+            Console.Write("Room number: ");
+            int number = int.Parse(Console.ReadLine());
+            Console.Write("Check-in date (dd/MM/yyyy): ");
+            DateTime checkIn = DateTime.Parse(Console.ReadLine());
+            Console.Write("Check-Out date (dd/MM/yyyy): ");
+            DateTime checkOut = DateTime.Parse(Console.ReadLine());
+
+            if (checkOut <= checkIn)
             {
-                //fs = new FileStream(@"C:\temp\data.txt", FileMode.Open);
-                fs = new FileStream(@"C:\Udemy_CSharp_COMPLETO_Programacao_Orientada_a_Objetos_Projetos\data.txt", FileMode.Open);
-                StreamReader sr = new StreamReader(fs);
-                string line = sr.ReadLine();
-                Console.WriteLine(line);
+                Console.WriteLine("Error in reservation: check-out date must be after check-in date");
             }
-            catch (FileNotFoundException e)
+            else
             {
-                Console.WriteLine(e.Message);
-            }
-            catch(DirectoryNotFoundException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                if (fs != null)
+                Reservation reservation = new Reservation(number, checkIn, checkOut);
+                Console.WriteLine("Reservation: {0}", reservation.ToString());
+
+                Console.WriteLine();
+                Console.WriteLine("Enter data to update the reservation: ");
+                Console.Write("Check-in date (dd/MM/yyyy): ");
+                checkIn = DateTime.Parse(Console.ReadLine());
+                Console.Write("Check-Out date (dd/MM/yyyy): ");
+                checkOut = DateTime.Parse(Console.ReadLine());
+
+                DateTime now = DateTime.Now;
+
+                if (checkIn <= now || checkOut <= now)
                 {
-                    fs.Close();
+                    Console.WriteLine("Error in reservation: Reservation dates for update must be future dates");
                 }
-            }        
+                else if (checkOut <= checkIn)
+                {
+                    Console.WriteLine("Error in reservation: check-out date must be after check-in date");
+                }
+                else
+                {
+                    reservation.UpdateDates(checkIn, checkOut);
+                    Console.WriteLine("Reservation: {0}", reservation.ToString());
+                }
+            }
             #endregion
 
 
