@@ -2271,43 +2271,77 @@ namespace Course
             #endregion
 
             #region 145. Criando exceções personalizadas - PARTE 3
+            //try
+            //{
+            //    Console.Write("Room number: ");
+            //    int number = int.Parse(Console.ReadLine());
+            //    Console.Write("Check-in date (dd/MM/yyyy): ");
+            //    DateTime checkIn = DateTime.Parse(Console.ReadLine());
+            //    Console.Write("Check-Out date (dd/MM/yyyy): ");
+            //    DateTime checkOut = DateTime.Parse(Console.ReadLine());
+
+            //    Reservation reservation = new Reservation(number, checkIn, checkOut);
+            //    Console.WriteLine("Reservation: {0}", reservation.ToString());
+
+            //    Console.WriteLine();
+            //    Console.WriteLine("Enter data to update the reservation: ");
+            //    Console.Write("Check-in date (dd/MM/yyyy): ");
+            //    checkIn = DateTime.Parse(Console.ReadLine());
+            //    Console.Write("Check-Out date (dd/MM/yyyy): ");
+            //    checkOut = DateTime.Parse(Console.ReadLine());
+
+            //    reservation.UpdateDates145(checkIn, checkOut);
+
+            //    reservation.UpdateDates(checkIn, checkOut);
+            //    Console.WriteLine("Reservation: {0}", reservation.ToString());
+            //}
+            //catch (DomainException e)
+            //{
+            //    Console.WriteLine("Error in reservation: {0}", e.Message);
+            //}
+            //catch(FormatException e)
+            //{
+            //    Console.WriteLine("Format error: {0}", e.Message);
+            //}catch(Exception e)
+            //{
+            //    Console.WriteLine("Unexpected error: {0}", e.Message);
+            //}
+            #endregion
+
+            #region 146. Exercício proposto (exceções)
             try
             {
-                Console.Write("Room number: ");
+                Console.WriteLine("Enter account data");
+                Console.Write("Number: ");
                 int number = int.Parse(Console.ReadLine());
-                Console.Write("Check-in date (dd/MM/yyyy): ");
-                DateTime checkIn = DateTime.Parse(Console.ReadLine());
-                Console.Write("Check-Out date (dd/MM/yyyy): ");
-                DateTime checkOut = DateTime.Parse(Console.ReadLine());
 
-                Reservation reservation = new Reservation(number, checkIn, checkOut);
-                Console.WriteLine("Reservation: {0}", reservation.ToString());
+                Console.Write("Holder: ");
+                string holder = Console.ReadLine();
+
+                Console.Write("Initial balance: ");
+                double initialBalance = double.Parse(Console.ReadLine());
+
+                Console.Write("Withdraw limit: ");
+                double withdrawLimit = double.Parse(Console.ReadLine());
+
+                AccountClass146 accountClass146 = new AccountClass146(number, holder, initialBalance, withdrawLimit);
 
                 Console.WriteLine();
-                Console.WriteLine("Enter data to update the reservation: ");
-                Console.Write("Check-in date (dd/MM/yyyy): ");
-                checkIn = DateTime.Parse(Console.ReadLine());
-                Console.Write("Check-Out date (dd/MM/yyyy): ");
-                checkOut = DateTime.Parse(Console.ReadLine());
+                Console.Write("Enter amount for withdraw: ");
+                accountClass146.Withdraw(double.Parse(Console.ReadLine()));
 
-                reservation.UpdateDates145(checkIn, checkOut);
+                Console.WriteLine("New balance: {0}",accountClass146.Balance.ToString("F2", CultureInfo.InvariantCulture));
 
-                reservation.UpdateDates(checkIn, checkOut);
-                Console.WriteLine("Reservation: {0}", reservation.ToString());
             }
             catch (DomainException e)
             {
-                Console.WriteLine("Error in reservation: {0}", e.Message);
+                Console.WriteLine("Withdraw error: {0}", e.Message);
             }
-            catch(FormatException e)
-            {
-                Console.WriteLine("Format error: {0}", e.Message);
-            }catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Unexpected error: {0}", e.Message);
             }
             #endregion
-
 
         }
         #region Função para calcular a média de um array do tipo double
