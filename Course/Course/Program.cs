@@ -2190,6 +2190,48 @@ namespace Course
             #endregion
 
             #region 143. Criando exceções personalizadas - PARTE 1
+            //Console.Write("Room number: ");
+            //int number = int.Parse(Console.ReadLine());
+            //Console.Write("Check-in date (dd/MM/yyyy): ");
+            //DateTime checkIn = DateTime.Parse(Console.ReadLine());
+            //Console.Write("Check-Out date (dd/MM/yyyy): ");
+            //DateTime checkOut = DateTime.Parse(Console.ReadLine());
+
+            //if (checkOut <= checkIn)
+            //{
+            //    Console.WriteLine("Error in reservation: check-out date must be after check-in date");
+            //}
+            //else
+            //{
+            //    Reservation reservation = new Reservation(number, checkIn, checkOut);
+            //    Console.WriteLine("Reservation: {0}", reservation.ToString());
+
+            //    Console.WriteLine();
+            //    Console.WriteLine("Enter data to update the reservation: ");
+            //    Console.Write("Check-in date (dd/MM/yyyy): ");
+            //    checkIn = DateTime.Parse(Console.ReadLine());
+            //    Console.Write("Check-Out date (dd/MM/yyyy): ");
+            //    checkOut = DateTime.Parse(Console.ReadLine());
+
+            //    DateTime now = DateTime.Now;
+
+            //    if (checkIn <= now || checkOut <= now)
+            //    {
+            //        Console.WriteLine("Error in reservation: Reservation dates for update must be future dates");
+            //    }
+            //    else if (checkOut <= checkIn)
+            //    {
+            //        Console.WriteLine("Error in reservation: check-out date must be after check-in date");
+            //    }
+            //    else
+            //    {
+            //        reservation.UpdateDates(checkIn, checkOut);
+            //        Console.WriteLine("Reservation: {0}", reservation.ToString());
+            //    }
+            //}
+            #endregion
+
+            #region 144. Criando exceções personalizadas - PARTE 2
             Console.Write("Room number: ");
             int number = int.Parse(Console.ReadLine());
             Console.Write("Check-in date (dd/MM/yyyy): ");
@@ -2213,15 +2255,11 @@ namespace Course
                 Console.Write("Check-Out date (dd/MM/yyyy): ");
                 checkOut = DateTime.Parse(Console.ReadLine());
 
-                DateTime now = DateTime.Now;
+                string error = reservation.UpdateDates144(checkIn, checkOut);
 
-                if (checkIn <= now || checkOut <= now)
+                if (error != null)
                 {
-                    Console.WriteLine("Error in reservation: Reservation dates for update must be future dates");
-                }
-                else if (checkOut <= checkIn)
-                {
-                    Console.WriteLine("Error in reservation: check-out date must be after check-in date");
+                    Console.WriteLine("Error in Reservation: {0}", error);
                 }
                 else
                 {

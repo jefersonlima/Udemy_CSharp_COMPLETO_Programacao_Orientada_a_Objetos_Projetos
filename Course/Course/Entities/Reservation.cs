@@ -32,6 +32,25 @@ namespace Course.Entities
             CheckOut = checkOut;
         }
 
+        public String UpdateDates144(DateTime checkIn, DateTime checkOut)
+        {
+            DateTime now = DateTime.Now;
+
+            if (checkIn < now || checkOut < now)
+            {
+               return "Reservation dates for update must be future dates";
+            }
+            if (checkOut <= checkIn)
+            {
+                return "check-out date must be after check-in date";
+            }
+
+            CheckIn = checkIn;
+            CheckOut = checkOut;
+
+            return null;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
