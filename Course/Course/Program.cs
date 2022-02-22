@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Course.Entities.Enums;
 using System.IO;
+using Course.Entities.Exceptions;
 
 namespace Course
 {
@@ -2232,19 +2233,53 @@ namespace Course
             #endregion
 
             #region 144. Criando exceções personalizadas - PARTE 2
-            Console.Write("Room number: ");
-            int number = int.Parse(Console.ReadLine());
-            Console.Write("Check-in date (dd/MM/yyyy): ");
-            DateTime checkIn = DateTime.Parse(Console.ReadLine());
-            Console.Write("Check-Out date (dd/MM/yyyy): ");
-            DateTime checkOut = DateTime.Parse(Console.ReadLine());
+            //Console.Write("Room number: ");
+            //int number = int.Parse(Console.ReadLine());
+            //Console.Write("Check-in date (dd/MM/yyyy): ");
+            //DateTime checkIn = DateTime.Parse(Console.ReadLine());
+            //Console.Write("Check-Out date (dd/MM/yyyy): ");
+            //DateTime checkOut = DateTime.Parse(Console.ReadLine());
 
-            if (checkOut <= checkIn)
+            //if (checkOut <= checkIn)
+            //{
+            //    Console.WriteLine("Error in reservation: check-out date must be after check-in date");
+            //}
+            //else
+            //{
+            //    Reservation reservation = new Reservation(number, checkIn, checkOut);
+            //    Console.WriteLine("Reservation: {0}", reservation.ToString());
+
+            //    Console.WriteLine();
+            //    Console.WriteLine("Enter data to update the reservation: ");
+            //    Console.Write("Check-in date (dd/MM/yyyy): ");
+            //    checkIn = DateTime.Parse(Console.ReadLine());
+            //    Console.Write("Check-Out date (dd/MM/yyyy): ");
+            //    checkOut = DateTime.Parse(Console.ReadLine());
+
+            //    string error = reservation.UpdateDates144(checkIn, checkOut);
+
+            //    if (error != null)
+            //    {
+            //        Console.WriteLine("Error in Reservation: {0}", error);
+            //    }
+            //    else
+            //    {
+            //        reservation.UpdateDates(checkIn, checkOut);
+            //        Console.WriteLine("Reservation: {0}", reservation.ToString());
+            //    }
+            //}
+            #endregion
+
+            #region 145. Criando exceções personalizadas - PARTE 3
+            try
             {
-                Console.WriteLine("Error in reservation: check-out date must be after check-in date");
-            }
-            else
-            {
+                Console.Write("Room number: ");
+                int number = int.Parse(Console.ReadLine());
+                Console.Write("Check-in date (dd/MM/yyyy): ");
+                DateTime checkIn = DateTime.Parse(Console.ReadLine());
+                Console.Write("Check-Out date (dd/MM/yyyy): ");
+                DateTime checkOut = DateTime.Parse(Console.ReadLine());
+
                 Reservation reservation = new Reservation(number, checkIn, checkOut);
                 Console.WriteLine("Reservation: {0}", reservation.ToString());
 
@@ -2255,17 +2290,21 @@ namespace Course
                 Console.Write("Check-Out date (dd/MM/yyyy): ");
                 checkOut = DateTime.Parse(Console.ReadLine());
 
-                string error = reservation.UpdateDates144(checkIn, checkOut);
+                reservation.UpdateDates145(checkIn, checkOut);
 
-                if (error != null)
-                {
-                    Console.WriteLine("Error in Reservation: {0}", error);
-                }
-                else
-                {
-                    reservation.UpdateDates(checkIn, checkOut);
-                    Console.WriteLine("Reservation: {0}", reservation.ToString());
-                }
+                reservation.UpdateDates(checkIn, checkOut);
+                Console.WriteLine("Reservation: {0}", reservation.ToString());
+            }
+            catch (DomainException e)
+            {
+                Console.WriteLine("Error in reservation: {0}", e.Message);
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine("Format error: {0}", e.Message);
+            }catch(Exception e)
+            {
+                Console.WriteLine("Unexpected error: {0}", e.Message);
             }
             #endregion
 
